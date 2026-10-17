@@ -1,0 +1,388 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Role {
+  STUDENT
+  FACULTY
+  ADMIN
+}
+
+enum ContentStatus {
+  DRAFT
+  PENDING_REVIEW
+  PUBLISHED
+  ARCHIVED
+}
+
+enum MaterialType {
+  NOTES
+  PPT
+  LAB_MANUAL
+  REFERENCE
+  HANDOUT
+  OTHER
+}
+
+enum ExamType {
+  INTERNAL_1
+  INTERNAL_2
+  END_SEMESTER
+  MODEL_PAPER
+  SUPPLEMENTARY
+}
+
+enum QuestionDifficulty {
+  EASY
+  MEDIUM
+  HARD
+}
+
+enum QuestionType {
+  MCQ
+  DESCRIPTIVE
+  NUMERICAL
+}
+
+enum VisualizationType {
+  TREE_VISUALIZER
+  PROCESS_SCHEDULER
+  DEADLOCK_GRAPH
+  PAGE_REPLACEMENT
+  PACKET_FLOW
+  PIPELINE_VISUALIZER
+  NORMALIZATION_ENGINE
+  SORTING_VISUALIZER
+  GENERIC_INTERACTIVE
+}
+
+model Institution {
+  id          String   @id @default(cuid())
+  name        String
+  code        String   @unique
+  city        String?
+  state       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  branches    Branch[]
+  users       User[]
+  announcements Announcement[]
+
+  @@index([code])
+}
+
+model Branch {
+  id            String       @id @default(cuid())
+  institutionId String
+  name          String
+  code          String
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+
+  institution   Institution  @relation(fields: [institutionId], references: [id], onDelete: Cascade)
+  academicYears AcademicYear[]
+  subjects      Subject[]
+  questionPapers QuestionPaper[]
+
+  @@unique([institutionId, code])
+  @@index([institutionId])
+}
+
+model AcademicYear {
+  id        String     @id @default(cuid())
+  branchId  String
+  yearNumber Int       // 1, 2, 3, 4
+  name      String     // e.g. "III Year"
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  branch    Branch     @relation(fields: [branchId], references: [id], onDelete: Cascade)
+  semesters Semester[]
+
+  @@unique([branchId, yearNumber])
+  @@index([branchId])
+}
+
+model Semester {
+  id             String       @id @default(cuid())
+  academicYearId String
+  semNumber      Int          // 1 .. 8
+  name           String       // e.g. "VII Semester"
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+
+  academicYear   AcademicYear @relation(fields: [academicYearId], references: [id], onDelete: Cascade)
+  sections       Section[]
+  subjects       Subject[]
+  questionPapers QuestionPaper[]
+
+  @@unique([academicYearId, semNumber])
+  @@index([academicYearId])
+}
+
+model Section {
+  id          String              @id @default(cuid())
+  semesterId  String
+  name        String              // e.g. "CSE-A", "CSE-B"
+  createdAt   DateTime            @default(now())
+  updatedAt   DateTime            @updatedAt
+
+  semester    Semester            @relation(fields: [semesterId], references: [id], onDelete: Cascade)
+  assignments Assignment[]
+  materials   Material[]
+  announcements Announcement[]
+  facultyAssignments FacultyAssignment[]
+
+  @@unique([semesterId, name])
+  @@index([semesterId])
+}
+
+model Subject {
+  id          String              @id @default(cuid())
+  branchId    String
+  semesterId  String
+  name        String              // e.g. "Operating Systems"
+  code        String              // e.g. "CS701"
+  description String?
+  unitsCount  Int                 @default(5)
+  topicsCount Int                 @default(30)
+  createdAt   DateTime            @default(now())
+  updatedAt   DateTime            @updatedAt
+
+  branch      Branch              @relation(fields: [branchId], references: [id], onDelete: Cascade)
+  semester    Semester            @relation(fields: [semesterId], references: [id], onDelete: Cascade)
+  materials   Material[]
+  assignments Assignment[]
+  questionPapers QuestionPaper[]
+  questions   Question[]
+  atlasTopics AtlasTopic[]
+  facultyAssignments FacultyAssignment[]
+
+  @@unique([branchId, semesterId, code])
+  @@index([branchId, semesterId])
+}
+
+model User {
+  id          String              @id @default(cuid())
+  institutionId String
+  email       String              @unique
+  passwordHash String
+  name        String
+  role        Role                @default(FACULTY)
+  department  String?
+  designation String?
+  avatarUrl   String?
+  isActive    Boolean             @default(true)
+  createdAt   DateTime            @default(now())
+  updatedAt   DateTime            @updatedAt
+
+  institution Institution         @relation(fields: [institutionId], references: [id], onDelete: Cascade)
+  facultyAssignments FacultyAssignment[]
+  uploadedMaterials Material[]
+  createdAssignments Assignment[]
+  authoredAnnouncements Announcement[]
+  createdQuestions Question[]
+
+  @@index([institutionId, role])
+  @@index([email])
+}
+
+model FacultyAssignment {
+  id        String   @id @default(cuid())
+  facultyId String
+  subjectId String
+  sectionId String
+  academicYear String? // e.g. "2026-2027"
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  faculty   User     @relation(fields: [facultyId], references: [id], onDelete: Cascade)
+  subject   Subject  @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+  section   Section  @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+
+  @@unique([facultyId, subjectId, sectionId])
+  @@index([facultyId])
+  @@index([subjectId, sectionId])
+}
+
+model Material {
+  id          String        @id @default(cuid())
+  title       String
+  description String?
+  type        MaterialType  @default(NOTES)
+  unit        Int?          @default(1)
+  fileUrl     String
+  fileName    String
+  fileSize    Int
+  mimeType    String
+  storageKey  String
+  status      ContentStatus @default(PUBLISHED)
+  subjectId   String
+  sectionId   String?
+  facultyId   String
+  downloadsCount Int        @default(0)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  subject     Subject       @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+  section     Section?      @relation(fields: [sectionId], references: [id], onDelete: SetNull)
+  faculty     User          @relation(fields: [facultyId], references: [id], onDelete: Cascade)
+
+  @@index([subjectId, status])
+  @@index([sectionId])
+  @@index([facultyId])
+}
+
+model Assignment {
+  id               String        @id @default(cuid())
+  title            String
+  description      String
+  unit             Int?          @default(1)
+  deadline         DateTime
+  fileUrl          String?
+  fileName         String?
+  submissionMethod String        @default("Submit to faculty in class or designated portal")
+  status           ContentStatus @default(PUBLISHED)
+  subjectId        String
+  sectionId        String
+  facultyId        String
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+
+  subject          Subject       @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+  section          Section       @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+  faculty          User          @relation(fields: [facultyId], references: [id], onDelete: Cascade)
+
+  @@index([subjectId, sectionId, status])
+  @@index([deadline])
+}
+
+model QuestionPaper {
+  id            String          @id @default(cuid())
+  title         String
+  academicYear  String          // e.g. "2026", "2025"
+  examType      ExamType        @default(END_SEMESTER)
+  fileUrl       String
+  fileName      String
+  fileSize      Int             @default(0)
+  status        ContentStatus   @default(PUBLISHED)
+  branchId      String
+  semesterId    String
+  subjectId     String
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+
+  branch        Branch          @relation(fields: [branchId], references: [id], onDelete: Cascade)
+  semester      Semester        @relation(fields: [semesterId], references: [id], onDelete: Cascade)
+  subject       Subject         @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+  paperQuestions PaperQuestion[]
+
+  @@index([subjectId, academicYear, examType])
+}
+
+model Question {
+  id            String             @id @default(cuid())
+  subjectId     String
+  unit          Int                @default(1)
+  topic         String             // e.g. "Deadlocks", "CPU Scheduling"
+  difficulty    QuestionDifficulty @default(MEDIUM)
+  type          QuestionType       @default(MCQ)
+  questionText  String
+  options       String?            // JSON string array for MCQ
+  correctAnswer String             // Correct option index or text
+  explanation   String
+  frequency     Int                @default(1) // Times appeared in exams
+  repeatCount   Int                @default(1)
+  status        ContentStatus      @default(PUBLISHED)
+  facultyId     String?
+  createdAt     DateTime           @default(now())
+  updatedAt     DateTime           @updatedAt
+
+  subject       Subject            @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+  faculty       User?              @relation(fields: [facultyId], references: [id], onDelete: SetNull)
+  paperQuestions PaperQuestion[]
+
+  @@index([subjectId, topic])
+  @@index([subjectId, unit])
+}
+
+model PaperQuestion {
+  id        String        @id @default(cuid())
+  paperId   String
+  questionId String
+  marks     Int           @default(5)
+  order     Int           @default(1)
+
+  paper     QuestionPaper @relation(fields: [paperId], references: [id], onDelete: Cascade)
+  question  Question      @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@unique([paperId, questionId])
+  @@index([paperId])
+  @@index([questionId])
+}
+
+model AtlasTopic {
+  id                String            @id @default(cuid())
+  title             String            // e.g. "CPU Scheduling"
+  slug              String            @unique // e.g. "cpu-scheduling"
+  subjectId         String
+  unit              Int               @default(1)
+  topic             String            // e.g. "Process Scheduling"
+  difficulty        QuestionDifficulty @default(MEDIUM)
+  estimatedTime     String            @default("15 mins")
+  learningObjectives String           // JSON array or newline separated
+  visualizationType VisualizationType @default(PROCESS_SCHEDULER)
+  overview          String
+  whyItMatters      String
+  concept           String
+  howItWorks        String
+  example           String
+  commonMistakes    String
+  quickRevision     String
+  status            ContentStatus     @default(PUBLISHED)
+  viewCount         Int               @default(0)
+  createdAt         DateTime          @default(now())
+  updatedAt         DateTime          @updatedAt
+
+  subject           Subject           @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+
+  @@index([subjectId, slug])
+  @@index([visualizationType])
+}
+
+model Announcement {
+  id            String        @id @default(cuid())
+  institutionId String
+  subjectId     String?
+  sectionId     String?
+  authorId      String
+  title         String
+  content       String
+  priority      String        @default("NORMAL") // "HIGH", "NORMAL", "LOW"
+  status        ContentStatus @default(PUBLISHED)
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  institution   Institution   @relation(fields: [institutionId], references: [id], onDelete: Cascade)
+  author        User          @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  section       Section?      @relation(fields: [sectionId], references: [id], onDelete: SetNull)
+
+  @@index([institutionId, priority])
+  @@index([subjectId, sectionId])
+}
+
+model AnalyticsEvent {
+  id        String   @id @default(cuid())
+  type      String   // "ATLAS_VIEW", "MATERIAL_DOWNLOAD", "PRACTICE_SUBMIT", "SEARCH"
+  targetId  String?
+  metadata  String?  // JSON string
+  createdAt DateTime @default(now())
+
+  @@index([type, createdAt])
+}
