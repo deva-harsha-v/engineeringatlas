@@ -40,6 +40,14 @@
       "code": "CIVIL",
       "createdAt": "2026-10-17T08:27:37.785Z",
       "updatedAt": "2026-10-17T08:27:37.785Z"
+    },
+    {
+      "id": "branch-tb",
+      "institutionId": "inst-svec-01",
+      "name": "Test Branch",
+      "code": "TB",
+      "createdAt": "2026-10-27T07:04:00.805Z",
+      "updatedAt": "2026-10-27T07:04:00.805Z"
     }
   ],
   "academicYears": [
@@ -202,6 +210,38 @@
       "name": "IV Year",
       "createdAt": "2026-10-22T09:47:36.239Z",
       "updatedAt": "2026-10-22T09:47:36.239Z"
+    },
+    {
+      "id": "ay-tb-1",
+      "branchId": "branch-tb",
+      "yearNumber": 1,
+      "name": "I Year",
+      "createdAt": "2026-10-27T07:04:00.805Z",
+      "updatedAt": "2026-10-27T07:04:00.805Z"
+    },
+    {
+      "id": "ay-tb-2",
+      "branchId": "branch-tb",
+      "yearNumber": 2,
+      "name": "II Year",
+      "createdAt": "2026-10-27T07:04:00.805Z",
+      "updatedAt": "2026-10-27T07:04:00.805Z"
+    },
+    {
+      "id": "ay-tb-3",
+      "branchId": "branch-tb",
+      "yearNumber": 3,
+      "name": "III Year",
+      "createdAt": "2026-10-27T07:04:00.805Z",
+      "updatedAt": "2026-10-27T07:04:00.805Z"
+    },
+    {
+      "id": "ay-tb-4",
+      "branchId": "branch-tb",
+      "yearNumber": 4,
+      "name": "IV Year",
+      "createdAt": "2026-10-27T07:04:00.805Z",
+      "updatedAt": "2026-10-27T07:04:00.805Z"
     }
   ],
   "semesters": [
@@ -524,6 +564,70 @@
       "name": "VIII Semester",
       "createdAt": "2026-10-22T09:47:36.239Z",
       "updatedAt": "2026-10-22T09:47:36.239Z"
+    },
+    {
+      "id": "sem-tb-1",
+      "academicYearId": "ay-tb-1",
+      "semNumber": 1,
+      "name": "I Semester",
+      "createdAt": "2026-10-27T07:04:00.805Z",
+      "updatedAt": "2026-10-27T07:04:00.805Z"
+    },
+    {
+      "id": "sem-tb-2",
+      "academicYearId": "ay-tb-1",
+      "semNumber": 2,
+      "name": "II Semester",
+      "createdAt": "2026-10-27T07:04:00.805Z",
+      "updatedAt": "2026-10-27T07:04:00.805Z"
+    },
+    {
+      "id": "sem-tb-3",
+      "academicYearId": "ay-tb-2",
+      "semNumber": 3,
+      "name": "III Semester",
+      "createdAt": "2026-10-27T07:04:00.805Z",
+      "updatedAt": "2026-10-27T07:04:00.805Z"
+    },
+    {
+      "id": "sem-tb-4",
+      "academicYearId": "ay-tb-2",
+      "semNumber": 4,
+      "name": "IV Semester",
+      "createdAt": "2026-10-27T07:04:00.805Z",
+      "updatedAt": "2026-10-27T07:04:00.805Z"
+    },
+    {
+      "id": "sem-tb-5",
+      "academicYearId": "ay-tb-3",
+      "semNumber": 5,
+      "name": "V Semester",
+      "createdAt": "2026-10-27T07:04:00.805Z",
+      "updatedAt": "2026-10-27T07:04:00.805Z"
+    },
+    {
+      "id": "sem-tb-6",
+      "academicYearId": "ay-tb-3",
+      "semNumber": 6,
+      "name": "VI Semester",
+      "createdAt": "2026-10-27T07:04:00.805Z",
+      "updatedAt": "2026-10-27T07:04:00.805Z"
+    },
+    {
+      "id": "sem-tb-7",
+      "academicYearId": "ay-tb-4",
+      "semNumber": 7,
+      "name": "VII Semester",
+      "createdAt": "2026-10-27T07:04:00.805Z",
+      "updatedAt": "2026-10-27T07:04:00.805Z"
+    },
+    {
+      "id": "sem-tb-8",
+      "academicYearId": "ay-tb-4",
+      "semNumber": 8,
+      "name": "VIII Semester",
+      "createdAt": "2026-10-27T07:04:00.805Z",
+      "updatedAt": "2026-10-27T07:04:00.805Z"
     }
   ],
   "sections": [
@@ -1960,7 +2064,7 @@
       "commonMistakes": "1. Forgetting that Turnaround Time includes the execution time itself.\n2. Confusing Non-preemptive SJF with Preemptive SJF (SRTF).\n3. Neglecting process arrival time when calculating the Gantt chart idle gaps.",
       "quickRevision": "• FCFS: Simple, non-preemptive, suffers from Convoy Effect.\n• SJF: Provably optimal for minimum average waiting time, but burst time is hard to predict.\n• Round Robin: Fair and interactive; performance depends critically on Time Quantum length.\n• Priority: Subject to starvation, resolved via aging.",
       "status": "PUBLISHED",
-      "viewCount": 1435,
+      "viewCount": 1436,
       "createdAt": "2026-10-17T08:27:37.785Z",
       "updatedAt": "2026-10-17T08:27:37.785Z"
     },
@@ -2511,6 +2615,18 @@
       "type": "ATLAS_VIEW",
       "targetId": "cpu-scheduling",
       "createdAt": "2026-10-22T05:01:28.987Z"
+    },
+    {
+      "id": "ev-1793084640889",
+      "type": "ATLAS_VIEW",
+      "targetId": "cpu-scheduling",
+      "createdAt": "2026-10-27T07:04:00.889Z"
+    },
+    {
+      "id": "ev-1793084640904",
+      "type": "SEARCH",
+      "metadata": "{\"query\":\"scheduling\"}",
+      "createdAt": "2026-10-27T07:04:00.904Z"
     }
   ]
 }
