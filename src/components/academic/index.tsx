@@ -14,6 +14,7 @@ import {
   AlertCircle,
   FileCode,
   BookOpen,
+  Square,
 } from 'lucide-react';
 import { Subject, Material, Assignment, QuestionPaper, Announcement } from '@/lib/types';
 import { Badge, Card, Button } from '@/components/ui';
@@ -53,23 +54,29 @@ export function SubjectCard({ subject }: { subject: Subject }) {
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '12px',
+            flexWrap: 'wrap',
+            gap: '8px 14px',
             paddingTop: '12px',
             borderTop: '1px solid var(--border-subtle)',
             fontSize: '12px',
-            color: 'var(--text-muted)',
-            fontFamily: 'var(--font-mono)',
+            color: 'var(--text-secondary)',
           }}
         >
-          <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-            <Compass size={13} color="var(--accent-hover)" /> {subject.atlasCount || 0} Atlas
-          </span>
-          <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-            <FileText size={13} /> {subject.materialsCount || 0} Notes
-          </span>
-          <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-            <CheckSquare size={13} /> {subject.questionsCount || 0} Practice
-          </span>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', whiteSpace: 'nowrap' }}>
+            <Compass size={14} color="var(--accent)" style={{ flexShrink: 0 }} />
+            <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>{subject.atlasCount || 0}</span>
+            <span>Atlas</span>
+          </div>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', whiteSpace: 'nowrap' }}>
+            <FileText size={14} color="var(--text-muted)" style={{ flexShrink: 0 }} />
+            <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>{subject.materialsCount || 0}</span>
+            <span>Notes</span>
+          </div>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', whiteSpace: 'nowrap' }}>
+            <CheckSquare size={14} color="var(--text-muted)" style={{ flexShrink: 0 }} />
+            <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>{subject.questionsCount || 0}</span>
+            <span>Practice</span>
+          </div>
         </div>
       </Link>
     </Card>
@@ -165,31 +172,96 @@ export function MaterialCard({ material }: { material: Material }) {
 
 // 3. AssignmentCard (Matching UI/UX Spec Page 11, Section 21)
 export function AssignmentCard({ assignment }: { assignment: Assignment }) {
+  const [isDone, setIsDone] = React.useState(false);
+
+  React.useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setIsDone(localStorage.getItem(`ea_asg_done_${assignment.id}`) === 'true');
+    }
+  }, [assignment.id]);
+
+  const toggleDone = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    const nextState = !isDone;
+    setIsDone(nextState);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem(`ea_asg_done_${assignment.id}`, String(nextState));
+      window.dispatchEvent(new Event('ea-asg-updated'));
+    }
+  };
+
   const deadlineDate = new Date(assignment.deadline);
   const now = new Date();
   const diffHours = Math.round((deadlineDate.getTime() - now.getTime()) / (1000 * 3600));
   const diffDays = Math.ceil(diffHours / 24);
 
-  let urgencyBadge = <Badge variant="default">Due in {diffDays} days</Badge>;
-  if (diffHours < 0) {
-    urgencyBadge = <Badge variant="default">Past Deadline</Badge>;
+  let urgencyBadge;
+  if (isDone) {
+    urgencyBadge = (
+      <span style={{ padding: '3px 8px', borderRadius: '4px', fontSize: '11px', fontWeight: 600, background: 'rgba(16, 185, 129, 0.12)', color: 'var(--success, #10b981)', border: '1px solid rgba(16, 185, 129, 0.25)' }}>
+        Completed
+      </span>
+    );
+  } else if (diffHours < 0) {
+    urgencyBadge = (
+      <span style={{ padding: '3px 8px', borderRadius: '4px', fontSize: '11px', fontWeight: 600, background: 'rgba(239, 68, 68, 0.12)', color: 'var(--error, #ef4444)', border: '1px solid rgba(239, 68, 68, 0.25)' }}>
+        Overdue
+      </span>
+    );
+  } else if (diffHours <= 24) {
+    urgencyBadge = (
+      <span style={{ padding: '3px 8px', borderRadius: '4px', fontSize: '11px', fontWeight: 600, background: 'rgba(245, 158, 11, 0.15)', color: 'var(--warning, #f59e0b)', border: '1px solid rgba(245, 158, 11, 0.3)' }}>
+        Due Today
+      </span>
+    );
   } else if (diffHours <= 48) {
-    urgencyBadge = <Badge variant="warning">Due in {diffHours}h</Badge>;
+    urgencyBadge = (
+      <span style={{ padding: '3px 8px', borderRadius: '4px', fontSize: '11px', fontWeight: 600, background: 'rgba(245, 158, 11, 0.12)', color: 'var(--warning, #f59e0b)', border: '1px solid rgba(245, 158, 11, 0.25)' }}>
+        Due Tomorrow
+      </span>
+    );
+  } else {
+    urgencyBadge = <Badge variant="default">{diffDays} Days Remaining</Badge>;
   }
 
   return (
-    <Card className="ea-card">
+    <Card className="ea-card" style={{ opacity: isDone ? 0.72 : 1, transition: 'all 0.2s ease' }}>
       <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '12px', marginBottom: '10px' }}>
-        <div>
-          <span className="badge badge-accent">UNIT {assignment.unit || 1}</span>
-          <h4 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text-primary)', marginTop: '8px' }}>
-            {assignment.title}
-          </h4>
+        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
+          <button
+            onClick={toggleDone}
+            aria-label={isDone ? 'Mark as incomplete' : 'Mark as completed'}
+            style={{
+              background: 'transparent',
+              border: 'none',
+              cursor: 'pointer',
+              color: isDone ? 'var(--success, #10b981)' : 'var(--text-muted)',
+              padding: '2px 0 0 0',
+              display: 'flex',
+              alignItems: 'center',
+            }}
+          >
+            {isDone ? <CheckSquare size={18} /> : <Square size={18} />}
+          </button>
+          <div>
+            <span className="badge badge-accent">UNIT {assignment.unit || 1}</span>
+            <h4
+              style={{
+                fontSize: '16px',
+                fontWeight: 600,
+                color: 'var(--text-primary)',
+                marginTop: '8px',
+                textDecoration: isDone ? 'line-through' : 'none',
+              }}
+            >
+              {assignment.title}
+            </h4>
+          </div>
         </div>
         {urgencyBadge}
       </div>
 
-      <p style={{ fontSize: '13px', color: 'var(--text-secondary)', marginBottom: '14px', lineHeight: 1.5 }}>
+      <p style={{ fontSize: '13px', color: 'var(--text-secondary)', marginBottom: '14px', lineHeight: 1.5, paddingLeft: '28px' }}>
         {assignment.description}
       </p>
 
@@ -201,6 +273,7 @@ export function AssignmentCard({ assignment }: { assignment: Assignment }) {
           fontSize: '12px',
           marginBottom: '14px',
           borderLeft: '2px solid var(--accent)',
+          marginLeft: '28px',
         }}
       >
         <span style={{ color: 'var(--text-muted)' }}>Submission Method: </span>
@@ -216,6 +289,7 @@ export function AssignmentCard({ assignment }: { assignment: Assignment }) {
           borderTop: '1px solid var(--border-subtle)',
           fontSize: '12px',
           color: 'var(--text-muted)',
+          paddingLeft: '28px',
         }}
       >
         <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>

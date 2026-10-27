@@ -42,10 +42,10 @@ export default function AdminDashboardPage() {
   }, [router]);
 
   return (
-    <div style={{ display: 'flex', minHeight: '100vh', backgroundColor: 'var(--bg-primary)' }}>
+    <div className="admin-layout-container" style={{ display: 'flex', minHeight: '100vh', backgroundColor: 'var(--bg-primary)' }}>
       <AdminSidebar />
 
-      <main style={{ flex: 1, padding: '36px 40px', overflowY: 'auto' }}>
+      <main className="admin-main-content" style={{ flex: 1, padding: '36px 40px', overflowY: 'auto' }}>
         {/* Header (Matching UI/UX Spec Page 16, Section 31) */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '32px' }}>
           <div>
@@ -59,6 +59,11 @@ export default function AdminDashboardPage() {
           </div>
 
           <div style={{ display: 'flex', gap: '10px' }}>
+            <Link href="/admin/academic/audit">
+              <Button variant="secondary" size="sm">
+                <ShieldCheck size={14} /> Syllabus Audit
+              </Button>
+            </Link>
             <Link href="/admin/academic">
               <Button variant="primary" size="sm">
                 <Layers size={14} /> Structure Manager
@@ -181,7 +186,7 @@ export default function AdminDashboardPage() {
         </div>
 
         {/* Most Popular Modules & Downloads */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(420px, 1fr))', gap: '24px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '24px' }}>
           <div className="ea-card">
             <h3 style={{ fontSize: '16px', fontWeight: 600, marginBottom: '14px' }}>Most Viewed Atlas Modules</h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
@@ -203,6 +208,10 @@ export default function AdminDashboardPage() {
           <div className="ea-card">
             <h3 style={{ fontSize: '16px', fontWeight: 600, marginBottom: '14px' }}>Fast Administration Shortcuts</h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <Link href="/admin/academic/audit" style={{ padding: '12px 14px', background: 'var(--surface-2)', borderRadius: 'var(--radius-sm)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderLeft: '3px solid var(--tertiary)' }}>
+                <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--text-primary)' }}>Syllabus Coverage & Readiness Audit</span>
+                <ArrowRight size={14} color="var(--tertiary)" />
+              </Link>
               <Link href="/admin/academic" style={{ padding: '12px 14px', background: 'var(--surface-2)', borderRadius: 'var(--radius-sm)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <span style={{ fontSize: '13px', fontWeight: 500 }}>Academic Structure Tree (Branches & Sections)</span>
                 <ArrowRight size={14} color="var(--accent)" />

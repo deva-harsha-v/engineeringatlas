@@ -3,13 +3,12 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
-import { StudentNav } from '@/components/layout/StudentNav';
-import { StudentBottomNav } from '@/components/layout/StudentBottomNav';
 import { useAcademicProfile } from '@/lib/useProfile';
 import { Subject, AtlasTopic, Material, Assignment, QuestionPaper } from '@/lib/types';
-import { Button, Badge, Card, EmptyState } from '@/components/ui';
+import { Button, Badge, Card, EmptyState, RippleLoader, AtlasAmbientBackground } from '@/components/ui';
 import { MaterialCard, AssignmentCard, PaperCard } from '@/components/academic';
 import { PastPaperIntelligence } from '@/components/academic/PastPaperIntelligence';
+import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import {
   Compass,
   FileText,
@@ -35,17 +34,22 @@ export default function SubjectWorkspacePage() {
   const [intelligence, setIntelligence] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
+  const [sectionView, setSectionView] = useState<'MY_SECTION' | 'ALL'>('MY_SECTION');
+
   // Material type filter
   const [materialFilter, setMaterialFilter] = useState<'ALL' | 'NOTES' | 'PPT' | 'LAB_MANUAL' | 'REFERENCE'>('ALL');
 
   useEffect(() => {
     async function loadSubjectData() {
       try {
+        const secId = profile?.sectionId || (profile?.section === 'CSE-B' ? 'sec-cseb' : profile?.section === 'ECE-A' ? 'sec-ecea' : profile?.section === 'ECE-B' ? 'sec-eceb' : 'sec-csea');
+        const secParam = sectionView === 'MY_SECTION' ? `&sectionId=${secId}` : '';
+
         const [subRes, atlasRes, matRes, asgRes, papRes, intelRes] = await Promise.all([
           fetch(`/api/subjects/${subjectId}`),
           fetch(`/api/atlas?subjectId=${subjectId}`),
-          fetch(`/api/materials?subjectId=${subjectId}`),
-          fetch(`/api/assignments?subjectId=${subjectId}`),
+          fetch(`/api/materials?subjectId=${subjectId}${secParam}`),
+          fetch(`/api/assignments?subjectId=${subjectId}&sectionId=${secId}`),
           fetch(`/api/papers?subjectId=${subjectId}`),
           fetch(`/api/papers/intelligence/${subjectId}`),
         ]);
@@ -75,30 +79,23 @@ export default function SubjectWorkspacePage() {
     if (subjectId) {
       loadSubjectData();
     }
-  }, [subjectId]);
+  }, [subjectId, sectionView, profile]);
 
   if (loading) {
     return (
-      <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-        <StudentNav />
-        <div className="ea-container" style={{ padding: '64px 16px', textAlign: 'center' }}>
-          <div className="skeleton" style={{ height: '40px', width: '280px', margin: '0 auto 16px' }} />
-          <div className="skeleton" style={{ height: '240px', maxWidth: '800px', margin: '0 auto' }} />
-        </div>
+      <div style={{ flex: 1, padding: '72px 16px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <RippleLoader size="md" message="Loading Subject Workspace..." subMessage="Fetching Units, Practice & Materials" />
       </div>
     );
   }
 
   if (!subject) {
     return (
-      <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-        <StudentNav />
-        <div className="ea-container" style={{ padding: '64px 16px' }}>
-          <EmptyState
-            title="Subject Not Found"
-            description="The requested subject code does not exist in the curriculum."
-          />
-        </div>
+      <div style={{ flex: 1, padding: '64px 16px' }}>
+        <EmptyState
+          title="Subject Not Found"
+          description="The requested subject code does not exist in the curriculum."
+        />
       </div>
     );
   }
@@ -118,22 +115,55 @@ export default function SubjectWorkspacePage() {
   ];
 
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }} className="mobile-nav-pad">
-      <StudentNav />
-
-      <main className="ea-container" style={{ flex: 1, padding: '32px 16px 64px' }}>
-        {/* Breadcrumb & Subject Header (Matching UI/UX Spec Page 7, Section 13) */}
-        <div style={{ marginBottom: '24px' }}>
-          <div className="tech-coordinate" style={{ marginBottom: '6px' }}>
-            {profile.branch} · {profile.semesterName} · {profile.section}
+    <main
+      className="mobile-nav-pad"
+      style={{
+        flex: 1,
+        padding: '24px clamp(16px, 2.5vw, 32px) 80px',
+        maxWidth: '1440px',
+        width: '100%',
+        boxSizing: 'border-box',
+        margin: '0 auto',
+      }}
+    >
+        {/* Subject Header Hero with Ambient Layer (Subtle Grid + Ambient Shapes) */}
+        <div
+          style={{
+            position: 'relative',
+            overflow: 'hidden',
+            borderRadius: '12px',
+            border: '1px solid var(--border)',
+            backgroundColor: 'var(--surface-1)',
+            padding: 'clamp(20px, 3vw, 28px) clamp(16px, 2.5vw, 24px)',
+            marginBottom: '24px',
+            boxSizing: 'border-box',
+          }}
+        >
+          <AtlasAmbientBackground
+            intensity="subtle"
+            contained
+            showGrid
+            showShapes
+            showGlow
+          />
+          <div style={{ position: 'relative', zIndex: 1 }}>
+            <Breadcrumbs
+              items={[
+                { label: 'Syllabus Subjects', href: '/student/subjects' },
+                { label: subject.name, active: true },
+              ]}
+            />
+            <div className="tech-coordinate" style={{ marginTop: '10px', marginBottom: '6px' }}>
+              {profile.branch} · {profile.semesterName} · {profile.section}
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+              <h1 className="text-page-title" style={{ margin: 0 }}>{subject.name}</h1>
+              <span className="badge badge-accent">{subject.code}</span>
+            </div>
+            <p style={{ fontSize: '14px', color: 'var(--text-secondary)', marginTop: '6px', marginBottom: 0, maxWidth: '720px' }}>
+              {subject.description || 'Core engineering subject syllabus and resources.'}
+            </p>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
-            <h1 className="text-page-title">{subject.name}</h1>
-            <span className="badge badge-accent">{subject.code}</span>
-          </div>
-          <p style={{ fontSize: '14px', color: 'var(--text-secondary)', marginTop: '4px' }}>
-            {subject.description || 'Core engineering subject syllabus and resources.'}
-          </p>
         </div>
 
         {/* Tab Navigation (Matching UI/UX Spec Page 7, Section 13) */}
@@ -144,12 +174,14 @@ export default function SubjectWorkspacePage() {
           >
             Overview
           </button>
-          <button
-            className={`tab-item ${activeTab === 'ATLAS' ? 'active' : ''}`}
-            onClick={() => setActiveTab('ATLAS')}
-          >
-            Atlas Modules ({atlasTopics.length})
-          </button>
+          {atlasTopics.length > 0 && (
+            <button
+              className={`tab-item ${activeTab === 'ATLAS' ? 'active' : ''}`}
+              onClick={() => setActiveTab('ATLAS')}
+            >
+              Interactive Topics ({atlasTopics.length})
+            </button>
+          )}
           <button
             className={`tab-item ${activeTab === 'MATERIALS' ? 'active' : ''}`}
             onClick={() => setActiveTab('MATERIALS')}
@@ -205,12 +237,14 @@ export default function SubjectWorkspacePage() {
                   {subject.topicsCount} Topics
                 </div>
               </div>
-              <div className="ea-card">
-                <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>ATLAS SIMULATIONS</div>
-                <div style={{ fontSize: '24px', fontWeight: 700, color: 'var(--accent-hover)' }}>
-                  {atlasTopics.length} Modules
+              {atlasTopics.length > 0 && (
+                <div className="ea-card">
+                  <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>INTERACTIVE ATLAS</div>
+                  <div style={{ fontSize: '24px', fontWeight: 700, color: 'var(--accent-hover)' }}>
+                    {atlasTopics.length} Modules
+                  </div>
                 </div>
-              </div>
+              )}
               <div className="ea-card">
                 <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>PRACTICE QUESTIONS</div>
                 <div style={{ fontSize: '24px', fontWeight: 700, color: 'var(--success)' }}>
@@ -298,7 +332,7 @@ export default function SubjectWorkspacePage() {
                 description="Our engineering faculty is currently drafting interactive visual modules for this subject."
               />
             ) : (
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '16px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '16px' }}>
                 {atlasTopics.map((topic) => (
                   <Card key={topic.id} hoverable className="ea-card">
                     <Link href={`/student/atlas/${topic.slug}`} style={{ display: 'block', textDecoration: 'none' }}>
@@ -337,17 +371,52 @@ export default function SubjectWorkspacePage() {
                 </p>
               </div>
 
-              {/* Filters (Matching UI/UX Spec Page 11, Section 19: All | Notes | PPT | Lab | Reference) */}
-              <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
-                {(['ALL', 'NOTES', 'PPT', 'LAB_MANUAL', 'REFERENCE'] as const).map((f) => (
+              {/* Section Context Toggle & Type Filters */}
+              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', alignItems: 'center' }}>
+                <div style={{ display: 'flex', gap: '4px', background: 'var(--surface-2)', padding: '3px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border)' }}>
                   <button
-                    key={f}
-                    onClick={() => setMaterialFilter(f)}
-                    className={`btn btn-sm ${materialFilter === f ? 'btn-primary' : 'btn-secondary'}`}
+                    onClick={() => setSectionView('MY_SECTION')}
+                    style={{
+                      padding: '4px 10px',
+                      fontSize: '12px',
+                      borderRadius: '3px',
+                      background: sectionView === 'MY_SECTION' ? 'var(--surface-1)' : 'transparent',
+                      color: sectionView === 'MY_SECTION' ? 'var(--accent-hover)' : 'var(--text-secondary)',
+                      border: 'none',
+                      cursor: 'pointer',
+                      fontWeight: sectionView === 'MY_SECTION' ? 600 : 400,
+                    }}
                   >
-                    {f === 'ALL' ? 'All' : f === 'LAB_MANUAL' ? 'Lab Manuals' : f}
+                    My Class ({profile.section})
                   </button>
-                ))}
+                  <button
+                    onClick={() => setSectionView('ALL')}
+                    style={{
+                      padding: '4px 10px',
+                      fontSize: '12px',
+                      borderRadius: '3px',
+                      background: sectionView === 'ALL' ? 'var(--surface-1)' : 'transparent',
+                      color: sectionView === 'ALL' ? 'var(--accent-hover)' : 'var(--text-secondary)',
+                      border: 'none',
+                      cursor: 'pointer',
+                      fontWeight: sectionView === 'ALL' ? 600 : 400,
+                    }}
+                  >
+                    All Sections
+                  </button>
+                </div>
+
+                <div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap' }}>
+                  {(['ALL', 'NOTES', 'PPT', 'LAB_MANUAL', 'REFERENCE'] as const).map((f) => (
+                    <button
+                      key={f}
+                      onClick={() => setMaterialFilter(f)}
+                      className={`btn btn-sm ${materialFilter === f ? 'btn-primary' : 'btn-secondary'}`}
+                    >
+                      {f === 'ALL' ? 'All' : f === 'LAB_MANUAL' ? 'Lab Manuals' : f}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -357,7 +426,7 @@ export default function SubjectWorkspacePage() {
                 description="Your faculty has not published any study materials in this category yet."
               />
             ) : (
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '16px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '16px' }}>
                 {filteredMaterials.map((mat) => (
                   <MaterialCard key={mat.id} material={mat} />
                 ))}
@@ -369,11 +438,19 @@ export default function SubjectWorkspacePage() {
         {/* TAB 4: ASSIGNMENTS (Matching UI/UX Spec Page 11, Section 21) */}
         {activeTab === 'ASSIGNMENTS' && (
           <div>
-            <div style={{ marginBottom: '20px' }}>
-              <h2 className="text-section-title">Subject Assignments</h2>
-              <p style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>
-                Track instructions, questions, and due dates specified by faculty.
-              </p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '12px', marginBottom: '20px' }}>
+              <div>
+                <h2 className="text-section-title">Subject Assignments</h2>
+                <p style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>
+                  Track instructions, questions, and due dates specified by faculty.
+                </p>
+              </div>
+
+              {/* Enrolled Section Context Indicator */}
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'var(--surface-2)', padding: '6px 12px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border)', fontSize: '12px', color: 'var(--text-secondary)' }}>
+                <span className="badge badge-accent" style={{ fontSize: '11px', padding: '2px 6px' }}>{profile.section}</span>
+                <span>Enrolled Section</span>
+              </div>
             </div>
 
             {assignments.length === 0 ? (
@@ -401,7 +478,7 @@ export default function SubjectWorkspacePage() {
               </p>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '16px' }}>
               <Card className="ea-card">
                 <span className="badge badge-accent" style={{ marginBottom: '10px' }}>UNIT 2 PRACTICE</span>
                 <h3 style={{ fontSize: '17px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '8px' }}>
@@ -478,8 +555,5 @@ export default function SubjectWorkspacePage() {
           </div>
         )}
       </main>
-
-      <StudentBottomNav />
-    </div>
-  );
+    );
 }

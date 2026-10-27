@@ -15,7 +15,10 @@ import {
   Settings,
   LogOut,
   ExternalLink,
+  ShieldCheck,
 } from 'lucide-react';
+import { ThemeToggle } from './ThemeToggle';
+import { EngineeringAtlasLogo } from '@/components/branding';
 
 export function AdminSidebar() {
   const pathname = usePathname();
@@ -24,10 +27,10 @@ export function AdminSidebar() {
   const handleLogout = async () => {
     try {
       await fetch('/api/auth/logout', { method: 'POST' });
-      router.push('/admin/login');
+      router.push('/login');
       router.refresh();
     } catch (e) {
-      router.push('/admin/login');
+      router.push('/login');
     }
   };
 
@@ -40,6 +43,7 @@ export function AdminSidebar() {
       title: 'ACADEMIC STRUCTURE',
       items: [
         { label: 'Hierarchy Manager', path: '/admin/academic', icon: Layers },
+        { label: 'Syllabus Audit', path: '/admin/academic/audit', icon: ShieldCheck },
       ],
     },
     {
@@ -68,6 +72,7 @@ export function AdminSidebar() {
 
   return (
     <aside
+      className="admin-sidebar-aside"
       style={{
         width: '260px',
         backgroundColor: 'var(--surface-1)',
@@ -81,30 +86,19 @@ export function AdminSidebar() {
       {/* Brand Header */}
       <div
         style={{
-          padding: '20px 20px 16px',
+          padding: '20px 16px 16px',
           borderBottom: '1px solid var(--border)',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '8px',
         }}
       >
-        <Link href="/admin" style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <span
-              style={{
-                fontFamily: 'var(--font-mono)',
-                fontWeight: 700,
-                fontSize: '14px',
-                letterSpacing: '0.06em',
-                color: 'var(--text-primary)',
-              }}
-            >
-              ENGINEERING ATLAS
-            </span>
-          </div>
-          <span className="badge badge-accent" style={{ alignSelf: 'flex-start' }}>
+        <EngineeringAtlasLogo size="sm" variant="full" href="/admin" />
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '2px' }}>
+          <span className="badge badge-accent" style={{ fontSize: '9px', padding: '2px 8px' }}>
             INSTITUTION CONTROL
           </span>
-        </Link>
-        <div style={{ fontSize: '11px', color: 'var(--text-muted)', marginTop: '8px' }}>
-          Sri Vasavi Engg College (SVEC)
+          <span style={{ fontSize: '11px', color: 'var(--text-muted)' }}>SVEC</span>
         </div>
       </div>
 
@@ -167,6 +161,11 @@ export function AdminSidebar() {
           gap: '8px',
         }}
       >
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '4px' }}>
+          <span style={{ fontSize: '11px', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>THEME</span>
+          <ThemeToggle showLabel={true} />
+        </div>
+
         <Link
           href="/student/home"
           target="_blank"

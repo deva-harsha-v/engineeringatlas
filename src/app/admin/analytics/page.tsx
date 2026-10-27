@@ -80,7 +80,7 @@ export default function AdminAnalyticsPage() {
         </div>
 
         {/* Ranking Tables */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(420px, 1fr))', gap: '24px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '24px' }}>
           <div className="ea-card">
             <h3 style={{ fontSize: '16px', fontWeight: 600, marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
               <Compass size={16} color="var(--accent-hover)" /> Top Ranked Atlas Modules by Engagement

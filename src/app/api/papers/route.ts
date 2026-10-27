@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { db } from '@/lib/db';
 import { requireRole } from '@/lib/auth';
+import { getStudentAcademicContextFromRequest } from '@/lib/academic-context';
 
 export async function GET(req: NextRequest) {
   try {
@@ -10,8 +11,45 @@ export async function GET(req: NextRequest) {
     const examType = searchParams.get('examType') || undefined;
     const status = searchParams.get('status') || 'PUBLISHED';
 
-    const papers = await db.questionPapers.findMany({ subjectId, academicYear, examType, status });
-    return NextResponse.json({ success: true, data: papers });
+    // Check student context
+    const studentContext = await getStudentAcademicContextFromRequest(req);
+    const hasStudentCookie = Boolean(
+      req.cookies.get('ea_academic_context')?.value ||
+      req.cookies.get('ea_branch_code')?.value ||
+      req.headers.get('x-academic-context')
+    );
+
+    // If student queries a subject, verify that subject belongs to student's branch
+    if (hasStudentCookie && subjectId && studentContext.branchId) {
+      const subject = await db.subjects.findById(subjectId);
+      if (subject && subject.branchId !== studentContext.branchId) {
+        return NextResponse.json(
+          {
+            success: false,
+            error: `Forbidden: Cross-branch access denied to question papers for ${subject.name}.`,
+          },
+          { status: 403 }
+        );
+      }
+    }
+
+    let papers = await db.questionPapers.findMany({ subjectId, academicYear, examType, status });
+
+    // If student requesting without specific subject, filter to student's branch
+    if (hasStudentCookie && studentContext.branchId) {
+      const branchSubjects = await db.subjects.findMany({ branchId: studentContext.branchId });
+      const branchSubjectIds = new Set(branchSubjects.map(s => s.id));
+      papers = papers.filter(p => branchSubjectIds.has(p.subjectId) || p.branchId === studentContext.branchId);
+    }
+
+    return NextResponse.json(
+      { success: true, data: papers },
+      {
+        headers: {
+          'Cache-Control': 'public, max-age=120, s-maxage=300, stale-while-revalidate=600',
+        },
+      }
+    );
   } catch (error: any) {
     return NextResponse.json({ success: false, error: error.message }, { status: 500 });
   }

@@ -12,6 +12,16 @@ export type QuestionDifficulty = 'EASY' | 'MEDIUM' | 'HARD';
 
 export type QuestionType = 'MCQ' | 'DESCRIPTIVE' | 'NUMERICAL';
 
+export type LearningType =
+  | 'STANDARD_CONTENT'
+  | 'VISUAL_EXPLANATION'
+  | 'ANIMATION'
+  | 'INTERACTIVE'
+  | 'SIMULATION'
+  | 'DIAGRAM'
+  | 'PRACTICE'
+  | 'LAB';
+
 export type VisualizationType =
   | 'TREE_VISUALIZER'
   | 'PROCESS_SCHEDULER'
@@ -21,6 +31,8 @@ export type VisualizationType =
   | 'PIPELINE_VISUALIZER'
   | 'NORMALIZATION_ENGINE'
   | 'SORTING_VISUALIZER'
+  | 'WAVEFORM_VISUALIZER'
+  | 'CIRCUIT_VISUALIZER'
   | 'GENERIC_INTERACTIVE';
 
 export interface AcademicProfile {
@@ -31,6 +43,9 @@ export interface AcademicProfile {
   semester: number; // e.g. 7
   semesterName?: string; // e.g. "VII Semester"
   section: string; // e.g. "CSE-A"
+  sectionId?: string; // e.g. "sec-csea"
+  studentName?: string; // e.g. "Aspirant"
+  rollNumber?: string;
 }
 
 export interface AuthUser {
@@ -42,6 +57,8 @@ export interface AuthUser {
   department?: string;
   designation?: string;
   avatarUrl?: string;
+  mustChangePassword?: boolean;
+  status?: 'ACTIVE' | 'INACTIVE' | 'PENDING_PASSWORD_CHANGE';
 }
 
 export interface Institution {
@@ -118,7 +135,9 @@ export interface FacultyAssignment {
   subjectCode?: string;
   sectionName?: string;
   branchCode?: string;
+  branchName?: string;
   semesterName?: string;
+  studentsCount?: number;
   createdAt: string;
   updatedAt: string;
 }
@@ -138,10 +157,13 @@ export interface Material {
   subjectId: string;
   sectionId?: string;
   facultyId: string;
+  facultyAssignmentId?: string;
   facultyName?: string;
   subjectName?: string;
   sectionName?: string;
   downloadsCount: number;
+  version?: number;
+  previousVersions?: Array<{ version: number; fileUrl: string; fileName: string; replacedAt: string }>;
   createdAt: string;
   updatedAt: string;
 }
@@ -159,8 +181,10 @@ export interface Assignment {
   subjectId: string;
   sectionId: string;
   facultyId: string;
+  facultyAssignmentId?: string;
   facultyName?: string;
   subjectName?: string;
+  subjectCode?: string;
   sectionName?: string;
   createdAt: string;
   updatedAt: string;
@@ -204,19 +228,39 @@ export interface Question {
   updatedAt: string;
 }
 
+export interface AtlasTopicMapping {
+  id: string;
+  atlasTopicId: string;
+  branchId?: string;
+  branchCode?: string;
+  subjectId: string;
+  unit: number;
+  topicName?: string;
+}
+
 export interface AtlasTopic {
   id: string;
   title: string;
   slug: string;
+  description?: string;
   subjectId: string;
   subjectName?: string;
   subjectCode?: string;
+  departmentId?: string;
+  department?: string; // e.g. "CSE", "ECE", "EEE", "MECH", "CIVIL", "COMMON"
+  classroomCode?: string; // e.g. "OS-CPU-01"
+  unitId?: string;
   unit: number;
   topic: string;
+  learningType: LearningType;
+  visualizationType?: VisualizationType | null;
+  configuration?: Record<string, any>;
+  canonicalTopicId?: string;
+  academicMappings?: AtlasTopicMapping[];
   difficulty: QuestionDifficulty;
   estimatedTime: string;
   learningObjectives: string[];
-  visualizationType: VisualizationType;
+  content?: string; // Detailed structured academic content for standard or visual topics
   overview: string;
   whyItMatters: string;
   concept: string;
@@ -224,8 +268,11 @@ export interface AtlasTopic {
   example: string;
   commonMistakes: string;
   quickRevision: string;
+  commonPitfalls?: string[];
+  revisionChecklist?: string[];
   status: ContentStatus;
   viewCount: number;
+  createdBy?: string;
   createdAt: string;
   updatedAt: string;
 }

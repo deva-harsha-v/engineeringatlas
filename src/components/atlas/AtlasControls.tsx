@@ -45,19 +45,19 @@ export function AtlasControls({
       }}
     >
       {/* Playback Buttons */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
         <button
           onClick={onPlayToggle}
           className={`btn ${isPlaying ? 'btn-secondary' : 'btn-primary'} btn-sm`}
-          style={{ minWidth: '96px' }}
+          style={{ minWidth: '96px', minHeight: '40px', padding: '0 16px' }}
         >
           {isPlaying ? (
             <>
-              <Pause size={14} /> Pause
+              <Pause size={15} /> Pause
             </>
           ) : (
             <>
-              <Play size={14} /> Play
+              <Play size={15} /> Play
             </>
           )}
         </button>
@@ -66,8 +66,9 @@ export function AtlasControls({
           onClick={onReset}
           className="btn btn-secondary btn-sm"
           title="Reset simulation to initial state"
+          style={{ minHeight: '40px', padding: '0 14px' }}
         >
-          <RotateCcw size={14} /> Reset
+          <RotateCcw size={15} /> Reset
         </button>
 
         {onStepBackward && (
@@ -76,9 +77,9 @@ export function AtlasControls({
             disabled={currentStep <= 1 || isPlaying}
             className="btn btn-secondary btn-sm"
             title="Step Backward"
-            style={{ opacity: currentStep <= 1 || isPlaying ? 0.4 : 1 }}
+            style={{ opacity: currentStep <= 1 || isPlaying ? 0.4 : 1, minHeight: '40px', minWidth: '40px', padding: '0 10px' }}
           >
-            <ChevronLeft size={14} />
+            <ChevronLeft size={16} />
           </button>
         )}
 
@@ -88,9 +89,9 @@ export function AtlasControls({
             disabled={currentStep >= totalSteps || isPlaying}
             className="btn btn-secondary btn-sm"
             title="Step Forward"
-            style={{ opacity: currentStep >= totalSteps || isPlaying ? 0.4 : 1 }}
+            style={{ opacity: currentStep >= totalSteps || isPlaying ? 0.4 : 1, minHeight: '40px', minWidth: '40px', padding: '0 10px' }}
           >
-            <ChevronRight size={14} />
+            <ChevronRight size={16} />
           </button>
         )}
       </div>

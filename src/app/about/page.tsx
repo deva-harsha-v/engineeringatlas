@@ -18,90 +18,13 @@ import {
   Sparkles,
 } from 'lucide-react';
 import { Button, Badge, Card } from '@/components/ui';
+import { PublicNavbar } from '@/components/layout/PublicNavbar';
 
 export default function AboutPage() {
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: 'var(--bg-primary)' }}>
-      {/* Top Global Bar */}
-      <header
-        style={{
-          borderBottom: '1px solid var(--border)',
-          backgroundColor: 'rgba(8, 11, 18, 0.95)',
-          position: 'sticky',
-          top: 0,
-          zIndex: 100,
-          backdropFilter: 'blur(8px)',
-        }}
-      >
-        <div
-          className="ea-container"
-          style={{
-            height: '64px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-          }}
-        >
-          {/* Logo */}
-          <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <div
-              style={{
-                width: '32px',
-                height: '32px',
-                background: 'var(--surface-2)',
-                border: '1px solid var(--border)',
-                borderRadius: 'var(--radius-sm)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="4" r="2.5" fill="#6366F1" />
-                <circle cx="4" cy="20" r="2.5" fill="#6366F1" />
-                <circle cx="20" cy="20" r="2.5" fill="#6366F1" />
-                <line x1="12" y1="4" x2="4" y2="20" stroke="#6366F1" strokeWidth="1.8" />
-                <line x1="12" y1="4" x2="20" y2="20" stroke="#6366F1" strokeWidth="1.8" />
-                <line x1="6.5" y1="15" x2="17.5" y2="15" stroke="#818CF8" strokeWidth="1.8" />
-              </svg>
-            </div>
-            <div>
-              <span
-                style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: '15px',
-                  fontWeight: 700,
-                  letterSpacing: '0.06em',
-                  color: 'var(--text-primary)',
-                }}
-              >
-                ENGINEERING ATLAS
-              </span>
-            </div>
-          </Link>
-
-          {/* Navigation Links */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <Link href="/student/home">
-              <Button variant="primary" size="sm">
-                Open Student Portal <ArrowRight size={14} />
-              </Button>
-            </Link>
-
-            <Link href="/faculty/login" className="desktop-only">
-              <Button variant="ghost" size="sm">
-                Faculty Login
-              </Button>
-            </Link>
-
-            <Link href="/admin/login" className="desktop-only">
-              <Button variant="ghost" size="sm">
-                Admin
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </header>
+      {/* Top Global Floating Bar (Public Navigation) */}
+      <PublicNavbar />
 
       {/* Hero Section */}
       <section
@@ -166,7 +89,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '24px' }}>
             <div
               style={{
                 backgroundColor: 'rgba(239, 68, 68, 0.04)',
@@ -324,14 +247,14 @@ export default function AboutPage() {
             Experience engineering concepts through interactive visualization and comprehensive academic materials.
           </p>
 
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '16px' }}>
-            <Link href="/student/home">
-              <Button variant="primary" size="lg">
-                Open Student Portal <ArrowRight size={18} />
+          <div className="about-cta-group">
+            <Link href="/student/home" className="about-cta-link">
+              <Button variant="primary" size="lg" className="about-cta-btn">
+                Student Companion <ArrowRight size={18} />
               </Button>
             </Link>
-            <Link href="/student/atlas">
-              <Button variant="secondary" size="lg">
+            <Link href="/student/atlas" className="about-cta-link">
+              <Button variant="secondary" size="lg" className="about-cta-btn">
                 Explore Atlas Visualizations
               </Button>
             </Link>
@@ -341,33 +264,34 @@ export default function AboutPage() {
 
       {/* Footer */}
       <footer
+        className="about-footer"
         style={{
           marginTop: 'auto',
           borderTop: '1px solid var(--border)',
           backgroundColor: 'var(--surface-1)',
-          padding: '24px 0',
+          padding: '28px 0 calc(28px + env(safe-area-inset-bottom, 0px))',
           fontSize: '13px',
           color: 'var(--text-muted)',
         }}
       >
         <div
-          className="ea-container"
+          className="ea-container about-footer-content"
           style={{
             display: 'flex',
             flexWrap: 'wrap',
             alignItems: 'center',
             justifyContent: 'space-between',
-            gap: '12px',
+            gap: '16px',
           }}
         >
-          <div>
+          <div className="about-footer-brand">
             <strong>Engineering Atlas</strong> · Sri Vasavi Engineering College (SVEC)
           </div>
-          <div style={{ display: 'flex', gap: '16px' }}>
+          <div className="about-footer-links" style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
             <Link href="/" style={{ color: 'var(--text-secondary)' }}>Home</Link>
             <Link href="/about" style={{ color: 'var(--accent-hover)' }}>About</Link>
-            <Link href="/faculty/login" style={{ color: 'var(--text-secondary)' }}>Faculty Portal</Link>
-            <Link href="/admin/login" style={{ color: 'var(--text-secondary)' }}>Admin Control</Link>
+            <Link href="/student/home" style={{ color: 'var(--text-secondary)' }}>Student Portal</Link>
+            <Link href="/login" style={{ color: 'var(--text-secondary)' }}>Staff & Admin Sign In</Link>
           </div>
         </div>
       </footer>

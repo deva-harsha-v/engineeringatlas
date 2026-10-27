@@ -109,6 +109,7 @@ export function NormalizationVisualizer() {
       <div
         style={{
           display: 'flex',
+          flexWrap: 'wrap',
           gap: '8px',
           background: 'var(--surface-2)',
           padding: '8px 12px',
@@ -119,12 +120,14 @@ export function NormalizationVisualizer() {
         <button
           onClick={() => setViewMode('NORMALIZATION')}
           className={`btn btn-sm ${viewMode === 'NORMALIZATION' ? 'btn-primary' : 'btn-ghost'}`}
+          style={{ flex: '1 1 auto', minHeight: '36px', justifyContent: 'center' }}
         >
           <Table size={14} /> Relational Normalization (1NF → 3NF)
         </button>
         <button
           onClick={() => setViewMode('BPLUS_TREE')}
           className={`btn btn-sm ${viewMode === 'BPLUS_TREE' ? 'btn-primary' : 'btn-ghost'}`}
+          style={{ flex: '1 1 auto', minHeight: '36px', justifyContent: 'center' }}
         >
           <Database size={14} /> B+ Tree Indexing Engine
         </button>
@@ -256,8 +259,8 @@ export function NormalizationVisualizer() {
           </div>
 
           {/* SVG B+ Tree Representation */}
-          <div style={{ display: 'flex', justifyContent: 'center', overflowX: 'auto', padding: '16px 0' }}>
-            <svg width="500" height="200" viewBox="0 0 500 200">
+          <div style={{ display: 'flex', justifyContent: 'center', overflowX: 'auto', padding: '16px 0', width: '100%', maxWidth: '100%' }}>
+            <svg width="100%" height="auto" viewBox="0 0 500 200" style={{ maxWidth: '500px', minWidth: '260px' }}>
               {/* Root Node [ 30 ] */}
               <rect x="200" y="20" width="100" height="34" rx="4" fill="var(--surface-1)" stroke="var(--accent)" strokeWidth="2" />
               <text x="250" y="42" textAnchor="middle" fill="#FFFFFF" fontSize="14" fontWeight="bold">Key: 30</text>

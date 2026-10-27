@@ -22,7 +22,13 @@ interface StepLog {
   imbalanceNode?: number;
 }
 
-export function AVLTreeVisualizer() {
+interface AVLTreeConfig {
+  treeType?: 'AVL' | 'BST';
+  operations?: ('insert' | 'delete' | 'search')[];
+  initialKeys?: number[];
+}
+
+export function AVLTreeVisualizer({ configuration }: { configuration?: AVLTreeConfig } = {}) {
   const [inputValue, setInputValue] = useState<string>('15');
   const [steps, setSteps] = useState<StepLog[]>([]);
   const [currentStepIndex, setCurrentStepIndex] = useState<number>(0);

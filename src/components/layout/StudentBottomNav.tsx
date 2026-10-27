@@ -3,72 +3,54 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, Compass, BookOpen, CheckSquare, FileText } from 'lucide-react';
+import { PRIMARY_NAVIGATION, isRouteActive } from '@/lib/navigation';
 
-export function StudentBottomNav() {
+export interface StudentBottomNavProps {
+  isHidden?: boolean;
+}
+
+/**
+ * Engineering Atlas Student Mobile Bottom Navigation
+ *
+ * Floating capsule pill navigation bar for mobile students.
+ * - 5 primary destinations: Home, Atlas, Subjects, Practice, Papers
+ * - Active item: soft inner pill highlight, accent icon + bold label
+ * - Inactive items: muted icon + label
+ * - Dual-theme: dark (#111722) and light (#FFFFFF)
+ * - Safe-area aware, touch-target >= 44px, zero new dependencies
+ */
+export function StudentBottomNav({ isHidden = false }: StudentBottomNavProps) {
   const pathname = usePathname();
 
-  const navItems = [
-    { label: 'Home', path: '/student/home', icon: Home },
-    { label: 'Atlas', path: '/student/atlas', icon: Compass },
-    { label: 'Subjects', path: '/student/subjects', icon: BookOpen },
-    { label: 'Practice', path: '/student/practice', icon: CheckSquare },
-    { label: 'Papers', path: '/student/papers', icon: FileText },
-  ];
+  // Only render inside authenticated student routes
+  if (isHidden || !pathname || !pathname.startsWith('/student') || pathname === '/student/setup') {
+    return null;
+  }
 
   return (
     <nav
-      className="mobile-only"
-      style={{
-        position: 'fixed',
-        bottom: 0,
-        left: 0,
-        right: 0,
-        height: '62px',
-        backgroundColor: 'rgba(13, 17, 26, 0.95)',
-        backdropFilter: 'blur(12px)',
-        borderTop: '1px solid var(--border)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-around',
-        zIndex: 100,
-        paddingBottom: 'env(safe-area-inset-bottom, 0px)',
-      }}
+      className="student-bottom-nav"
+      aria-label="Student Mobile Primary Navigation"
     >
-      {navItems.map((item) => {
+      {PRIMARY_NAVIGATION.map((item) => {
         const Icon = item.icon;
-        const isActive =
-          item.path === '/student/home'
-            ? pathname === '/student/home' || pathname === '/student'
-            : pathname.startsWith(item.path);
+        const active = isRouteActive(item.path, pathname);
 
         return (
           <Link
-            key={item.path}
+            key={item.id}
             href={item.path}
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '4px',
-              padding: '8px 12px',
-              color: isActive ? 'var(--accent-hover)' : 'var(--text-muted)',
-              textDecoration: 'none',
-              flex: 1,
-              transition: 'color 0.15s ease',
-            }}
+            aria-current={active ? 'page' : undefined}
+            aria-label={item.label}
+            className={`student-nav-item${active ? ' active' : ''}`}
           >
-            <Icon size={18} strokeWidth={isActive ? 2.5 : 1.8} />
-            <span
-              style={{
-                fontSize: '11px',
-                fontWeight: isActive ? 600 : 400,
-                letterSpacing: '0.02em',
-              }}
-            >
-              {item.label}
-            </span>
+            <Icon
+              size={20}
+              strokeWidth={active ? 2.2 : 1.75}
+              className="student-nav-icon"
+              aria-hidden="true"
+            />
+            <span className="student-nav-label">{item.label}</span>
           </Link>
         );
       })}

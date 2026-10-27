@@ -5,8 +5,8 @@
     "code": "SVEC",
     "city": "Tadepalligudem",
     "state": "Andhra Pradesh",
-    "createdAt": "2026-10-17T06:38:24.369Z",
-    "updatedAt": "2026-10-17T06:38:24.370Z"
+    "createdAt": "2026-10-17T08:27:37.784Z",
+    "updatedAt": "2026-10-17T08:27:37.785Z"
   },
   "branches": [
     {
@@ -14,28 +14,516 @@
       "institutionId": "inst-svec-01",
       "name": "Computer Science & Engineering",
       "code": "CSE",
-      "createdAt": "2026-10-17T06:38:24.370Z",
-      "updatedAt": "2026-10-17T06:38:24.370Z"
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
+    },
+    {
+      "id": "branch-ece",
+      "institutionId": "inst-svec-01",
+      "name": "Electronics & Communication Engineering",
+      "code": "ECE",
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
+    },
+    {
+      "id": "branch-eee",
+      "institutionId": "inst-svec-01",
+      "name": "Electrical & Electronics Engineering",
+      "code": "EEE",
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
+    },
+    {
+      "id": "branch-civil",
+      "institutionId": "inst-svec-01",
+      "name": "Civil Engineering",
+      "code": "CIVIL",
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
     }
   ],
   "academicYears": [
+    {
+      "id": "ay-mech-1",
+      "branchId": "branch-mech",
+      "yearNumber": 1,
+      "name": "I Year",
+      "createdAt": "2026-10-22T09:43:47.637Z",
+      "updatedAt": "2026-10-22T09:43:47.637Z"
+    },
+    {
+      "id": "ay-cse-1",
+      "branchId": "branch-cse",
+      "yearNumber": 1,
+      "name": "I Year",
+      "createdAt": "2026-10-22T09:47:36.226Z",
+      "updatedAt": "2026-10-22T09:47:36.237Z"
+    },
+    {
+      "id": "ay-ece-1",
+      "branchId": "branch-ece",
+      "yearNumber": 1,
+      "name": "I Year",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "ay-eee-1",
+      "branchId": "branch-eee",
+      "yearNumber": 1,
+      "name": "I Year",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "ay-civil-1",
+      "branchId": "branch-civil",
+      "yearNumber": 1,
+      "name": "I Year",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "ay-mech-2",
+      "branchId": "branch-mech",
+      "yearNumber": 2,
+      "name": "II Year",
+      "createdAt": "2026-10-22T09:43:47.637Z",
+      "updatedAt": "2026-10-22T09:43:47.637Z"
+    },
+    {
+      "id": "ay-cse-2",
+      "branchId": "branch-cse",
+      "yearNumber": 2,
+      "name": "II Year",
+      "createdAt": "2026-10-22T09:47:36.237Z",
+      "updatedAt": "2026-10-22T09:47:36.237Z"
+    },
+    {
+      "id": "ay-ece-2",
+      "branchId": "branch-ece",
+      "yearNumber": 2,
+      "name": "II Year",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "ay-eee-2",
+      "branchId": "branch-eee",
+      "yearNumber": 2,
+      "name": "II Year",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "ay-civil-2",
+      "branchId": "branch-civil",
+      "yearNumber": 2,
+      "name": "II Year",
+      "createdAt": "2026-10-22T09:47:36.239Z",
+      "updatedAt": "2026-10-22T09:47:36.239Z"
+    },
     {
       "id": "ay-3",
       "branchId": "branch-cse",
       "yearNumber": 3,
       "name": "III Year",
-      "createdAt": "2026-10-17T06:38:24.370Z",
-      "updatedAt": "2026-10-17T06:38:24.370Z"
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
+    },
+    {
+      "id": "ay-ece-3",
+      "branchId": "branch-ece",
+      "yearNumber": 3,
+      "name": "III Year",
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
+    },
+    {
+      "id": "ay-mech-3",
+      "branchId": "branch-mech",
+      "yearNumber": 3,
+      "name": "III Year",
+      "createdAt": "2026-10-22T09:43:47.637Z",
+      "updatedAt": "2026-10-22T09:43:47.637Z"
+    },
+    {
+      "id": "ay-eee-3",
+      "branchId": "branch-eee",
+      "yearNumber": 3,
+      "name": "III Year",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "ay-civil-3",
+      "branchId": "branch-civil",
+      "yearNumber": 3,
+      "name": "III Year",
+      "createdAt": "2026-10-22T09:47:36.239Z",
+      "updatedAt": "2026-10-22T09:47:36.239Z"
+    },
+    {
+      "id": "ay-mech-4",
+      "branchId": "branch-mech",
+      "yearNumber": 4,
+      "name": "IV Year",
+      "createdAt": "2026-10-22T09:43:47.637Z",
+      "updatedAt": "2026-10-22T09:43:47.637Z"
+    },
+    {
+      "id": "ay-cse-4",
+      "branchId": "branch-cse",
+      "yearNumber": 4,
+      "name": "IV Year",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "ay-ece-4",
+      "branchId": "branch-ece",
+      "yearNumber": 4,
+      "name": "IV Year",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "ay-eee-4",
+      "branchId": "branch-eee",
+      "yearNumber": 4,
+      "name": "IV Year",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "ay-civil-4",
+      "branchId": "branch-civil",
+      "yearNumber": 4,
+      "name": "IV Year",
+      "createdAt": "2026-10-22T09:47:36.239Z",
+      "updatedAt": "2026-10-22T09:47:36.239Z"
     }
   ],
   "semesters": [
     {
-      "id": "sem-7",
+      "id": "sem-mech-1",
+      "academicYearId": "ay-mech-1",
+      "semNumber": 1,
+      "name": "I Semester",
+      "createdAt": "2026-10-22T09:43:47.637Z",
+      "updatedAt": "2026-10-22T09:43:47.637Z"
+    },
+    {
+      "id": "sem-cse-1",
+      "academicYearId": "ay-cse-1",
+      "semNumber": 1,
+      "name": "I Semester",
+      "createdAt": "2026-10-22T09:47:36.237Z",
+      "updatedAt": "2026-10-22T09:47:36.237Z"
+    },
+    {
+      "id": "sem-ece-1",
+      "academicYearId": "ay-ece-1",
+      "semNumber": 1,
+      "name": "I Semester",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sem-eee-1",
+      "academicYearId": "ay-eee-1",
+      "semNumber": 1,
+      "name": "I Semester",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sem-civil-1",
+      "academicYearId": "ay-civil-1",
+      "semNumber": 1,
+      "name": "I Semester",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sem-mech-2",
+      "academicYearId": "ay-mech-1",
+      "semNumber": 2,
+      "name": "II Semester",
+      "createdAt": "2026-10-22T09:43:47.637Z",
+      "updatedAt": "2026-10-22T09:43:47.637Z"
+    },
+    {
+      "id": "sem-cse-2",
+      "academicYearId": "ay-cse-1",
+      "semNumber": 2,
+      "name": "II Semester",
+      "createdAt": "2026-10-22T09:47:36.237Z",
+      "updatedAt": "2026-10-22T09:47:36.237Z"
+    },
+    {
+      "id": "sem-ece-2",
+      "academicYearId": "ay-ece-1",
+      "semNumber": 2,
+      "name": "II Semester",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sem-eee-2",
+      "academicYearId": "ay-eee-1",
+      "semNumber": 2,
+      "name": "II Semester",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sem-civil-2",
+      "academicYearId": "ay-civil-1",
+      "semNumber": 2,
+      "name": "II Semester",
+      "createdAt": "2026-10-22T09:47:36.239Z",
+      "updatedAt": "2026-10-22T09:47:36.239Z"
+    },
+    {
+      "id": "sem-mech-3",
+      "academicYearId": "ay-mech-2",
+      "semNumber": 3,
+      "name": "III Semester",
+      "createdAt": "2026-10-22T09:43:47.637Z",
+      "updatedAt": "2026-10-22T09:43:47.637Z"
+    },
+    {
+      "id": "sem-cse-3",
+      "academicYearId": "ay-cse-2",
+      "semNumber": 3,
+      "name": "III Semester",
+      "createdAt": "2026-10-22T09:47:36.237Z",
+      "updatedAt": "2026-10-22T09:47:36.237Z"
+    },
+    {
+      "id": "sem-ece-3",
+      "academicYearId": "ay-ece-2",
+      "semNumber": 3,
+      "name": "III Semester",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sem-eee-3",
+      "academicYearId": "ay-eee-2",
+      "semNumber": 3,
+      "name": "III Semester",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sem-civil-3",
+      "academicYearId": "ay-civil-2",
+      "semNumber": 3,
+      "name": "III Semester",
+      "createdAt": "2026-10-22T09:47:36.239Z",
+      "updatedAt": "2026-10-22T09:47:36.239Z"
+    },
+    {
+      "id": "sem-mech-4",
+      "academicYearId": "ay-mech-2",
+      "semNumber": 4,
+      "name": "IV Semester",
+      "createdAt": "2026-10-22T09:43:47.637Z",
+      "updatedAt": "2026-10-22T09:43:47.637Z"
+    },
+    {
+      "id": "sem-cse-4",
+      "academicYearId": "ay-cse-2",
+      "semNumber": 4,
+      "name": "IV Semester",
+      "createdAt": "2026-10-22T09:47:36.237Z",
+      "updatedAt": "2026-10-22T09:47:36.237Z"
+    },
+    {
+      "id": "sem-ece-4",
+      "academicYearId": "ay-ece-2",
+      "semNumber": 4,
+      "name": "IV Semester",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sem-eee-4",
+      "academicYearId": "ay-eee-2",
+      "semNumber": 4,
+      "name": "IV Semester",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sem-civil-4",
+      "academicYearId": "ay-civil-2",
+      "semNumber": 4,
+      "name": "IV Semester",
+      "createdAt": "2026-10-22T09:47:36.239Z",
+      "updatedAt": "2026-10-22T09:47:36.239Z"
+    },
+    {
+      "id": "sem-mech-5",
+      "academicYearId": "ay-mech-3",
+      "semNumber": 5,
+      "name": "V Semester",
+      "createdAt": "2026-10-22T09:43:47.637Z",
+      "updatedAt": "2026-10-22T09:43:47.637Z"
+    },
+    {
+      "id": "sem-cse-5",
       "academicYearId": "ay-3",
+      "semNumber": 5,
+      "name": "V Semester",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sem-ece-5",
+      "academicYearId": "ay-ece-3",
+      "semNumber": 5,
+      "name": "V Semester",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sem-eee-5",
+      "academicYearId": "ay-eee-3",
+      "semNumber": 5,
+      "name": "V Semester",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sem-civil-5",
+      "academicYearId": "ay-civil-3",
+      "semNumber": 5,
+      "name": "V Semester",
+      "createdAt": "2026-10-22T09:47:36.239Z",
+      "updatedAt": "2026-10-22T09:47:36.239Z"
+    },
+    {
+      "id": "sem-mech-6",
+      "academicYearId": "ay-mech-3",
+      "semNumber": 6,
+      "name": "VI Semester",
+      "createdAt": "2026-10-22T09:43:47.637Z",
+      "updatedAt": "2026-10-22T09:43:47.637Z"
+    },
+    {
+      "id": "sem-6",
+      "academicYearId": "ay-3",
+      "semNumber": 6,
+      "name": "VI Semester",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sem-ece-6",
+      "academicYearId": "ay-ece-3",
+      "semNumber": 6,
+      "name": "VI Semester",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sem-eee-6",
+      "academicYearId": "ay-eee-3",
+      "semNumber": 6,
+      "name": "VI Semester",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sem-civil-6",
+      "academicYearId": "ay-civil-3",
+      "semNumber": 6,
+      "name": "VI Semester",
+      "createdAt": "2026-10-22T09:47:36.239Z",
+      "updatedAt": "2026-10-22T09:47:36.239Z"
+    },
+    {
+      "id": "sem-7",
+      "academicYearId": "ay-cse-4",
       "semNumber": 7,
       "name": "VII Semester",
-      "createdAt": "2026-10-17T06:38:24.370Z",
-      "updatedAt": "2026-10-17T06:38:24.370Z"
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
+    },
+    {
+      "id": "sem-ece-7",
+      "academicYearId": "ay-ece-4",
+      "semNumber": 7,
+      "name": "VII Semester",
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
+    },
+    {
+      "id": "sem-mech-7",
+      "academicYearId": "ay-mech-4",
+      "semNumber": 7,
+      "name": "VII Semester",
+      "createdAt": "2026-10-22T09:43:47.637Z",
+      "updatedAt": "2026-10-22T09:43:47.637Z"
+    },
+    {
+      "id": "sem-eee-7",
+      "academicYearId": "ay-eee-4",
+      "semNumber": 7,
+      "name": "VII Semester",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sem-civil-7",
+      "academicYearId": "ay-civil-4",
+      "semNumber": 7,
+      "name": "VII Semester",
+      "createdAt": "2026-10-22T09:47:36.239Z",
+      "updatedAt": "2026-10-22T09:47:36.239Z"
+    },
+    {
+      "id": "sem-mech-8",
+      "academicYearId": "ay-mech-4",
+      "semNumber": 8,
+      "name": "VIII Semester",
+      "createdAt": "2026-10-22T09:43:47.637Z",
+      "updatedAt": "2026-10-22T09:43:47.637Z"
+    },
+    {
+      "id": "sem-cse-8",
+      "academicYearId": "ay-cse-4",
+      "semNumber": 8,
+      "name": "VIII Semester",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sem-ece-8",
+      "academicYearId": "ay-ece-4",
+      "semNumber": 8,
+      "name": "VIII Semester",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sem-eee-8",
+      "academicYearId": "ay-eee-4",
+      "semNumber": 8,
+      "name": "VIII Semester",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sem-civil-8",
+      "academicYearId": "ay-civil-4",
+      "semNumber": 8,
+      "name": "VIII Semester",
+      "createdAt": "2026-10-22T09:47:36.239Z",
+      "updatedAt": "2026-10-22T09:47:36.239Z"
     }
   ],
   "sections": [
@@ -43,15 +531,449 @@
       "id": "sec-csea",
       "semesterId": "sem-7",
       "name": "CSE-A",
-      "createdAt": "2026-10-17T06:38:24.370Z",
-      "updatedAt": "2026-10-17T06:38:24.370Z"
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
     },
     {
       "id": "sec-cseb",
       "semesterId": "sem-7",
       "name": "CSE-B",
-      "createdAt": "2026-10-17T06:38:24.370Z",
-      "updatedAt": "2026-10-17T06:38:24.370Z"
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
+    },
+    {
+      "id": "sec-ecea",
+      "semesterId": "sem-ece-7",
+      "name": "ECE-A",
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
+    },
+    {
+      "id": "sec-eceb",
+      "semesterId": "sem-ece-7",
+      "name": "ECE-B",
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
+    },
+    {
+      "id": "sec-cse1-a",
+      "semesterId": "sem-cse-1",
+      "name": "CSE-A",
+      "createdAt": "2026-10-22T09:47:36.237Z",
+      "updatedAt": "2026-10-22T09:47:36.237Z"
+    },
+    {
+      "id": "sec-cse1-b",
+      "semesterId": "sem-cse-1",
+      "name": "CSE-B",
+      "createdAt": "2026-10-22T09:47:36.237Z",
+      "updatedAt": "2026-10-22T09:47:36.237Z"
+    },
+    {
+      "id": "sec-cse2-a",
+      "semesterId": "sem-cse-2",
+      "name": "CSE-A",
+      "createdAt": "2026-10-22T09:47:36.237Z",
+      "updatedAt": "2026-10-22T09:47:36.237Z"
+    },
+    {
+      "id": "sec-cse2-b",
+      "semesterId": "sem-cse-2",
+      "name": "CSE-B",
+      "createdAt": "2026-10-22T09:47:36.237Z",
+      "updatedAt": "2026-10-22T09:47:36.237Z"
+    },
+    {
+      "id": "sec-cse3-a",
+      "semesterId": "sem-cse-3",
+      "name": "CSE-A",
+      "createdAt": "2026-10-22T09:47:36.237Z",
+      "updatedAt": "2026-10-22T09:47:36.237Z"
+    },
+    {
+      "id": "sec-cse3-b",
+      "semesterId": "sem-cse-3",
+      "name": "CSE-B",
+      "createdAt": "2026-10-22T09:47:36.237Z",
+      "updatedAt": "2026-10-22T09:47:36.237Z"
+    },
+    {
+      "id": "sec-cse4-a",
+      "semesterId": "sem-cse-4",
+      "name": "CSE-A",
+      "createdAt": "2026-10-22T09:47:36.237Z",
+      "updatedAt": "2026-10-22T09:47:36.237Z"
+    },
+    {
+      "id": "sec-cse4-b",
+      "semesterId": "sem-cse-4",
+      "name": "CSE-B",
+      "createdAt": "2026-10-22T09:47:36.237Z",
+      "updatedAt": "2026-10-22T09:47:36.237Z"
+    },
+    {
+      "id": "sec-cse5-a",
+      "semesterId": "sem-cse-5",
+      "name": "CSE-A",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-cse5-b",
+      "semesterId": "sem-cse-5",
+      "name": "CSE-B",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-cse6-a",
+      "semesterId": "sem-6",
+      "name": "CSE-A",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-cse6-b",
+      "semesterId": "sem-6",
+      "name": "CSE-B",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-cse8-a",
+      "semesterId": "sem-cse-8",
+      "name": "CSE-A",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-cse8-b",
+      "semesterId": "sem-cse-8",
+      "name": "CSE-B",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-ece1-a",
+      "semesterId": "sem-ece-1",
+      "name": "ECE-A",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-ece1-b",
+      "semesterId": "sem-ece-1",
+      "name": "ECE-B",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-ece2-a",
+      "semesterId": "sem-ece-2",
+      "name": "ECE-A",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-ece2-b",
+      "semesterId": "sem-ece-2",
+      "name": "ECE-B",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-ece3-a",
+      "semesterId": "sem-ece-3",
+      "name": "ECE-A",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-ece3-b",
+      "semesterId": "sem-ece-3",
+      "name": "ECE-B",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-ece4-a",
+      "semesterId": "sem-ece-4",
+      "name": "ECE-A",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-ece4-b",
+      "semesterId": "sem-ece-4",
+      "name": "ECE-B",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-ece5-a",
+      "semesterId": "sem-ece-5",
+      "name": "ECE-A",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-ece5-b",
+      "semesterId": "sem-ece-5",
+      "name": "ECE-B",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-ece6-a",
+      "semesterId": "sem-ece-6",
+      "name": "ECE-A",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-ece6-b",
+      "semesterId": "sem-ece-6",
+      "name": "ECE-B",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-ece8-a",
+      "semesterId": "sem-ece-8",
+      "name": "ECE-A",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-ece8-b",
+      "semesterId": "sem-ece-8",
+      "name": "ECE-B",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-eee1-a",
+      "semesterId": "sem-eee-1",
+      "name": "EEE-A",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-eee1-b",
+      "semesterId": "sem-eee-1",
+      "name": "EEE-B",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-eee2-a",
+      "semesterId": "sem-eee-2",
+      "name": "EEE-A",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-eee2-b",
+      "semesterId": "sem-eee-2",
+      "name": "EEE-B",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-eee3-a",
+      "semesterId": "sem-eee-3",
+      "name": "EEE-A",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-eee3-b",
+      "semesterId": "sem-eee-3",
+      "name": "EEE-B",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-eee4-a",
+      "semesterId": "sem-eee-4",
+      "name": "EEE-A",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-eee4-b",
+      "semesterId": "sem-eee-4",
+      "name": "EEE-B",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-eee5-a",
+      "semesterId": "sem-eee-5",
+      "name": "EEE-A",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-eee5-b",
+      "semesterId": "sem-eee-5",
+      "name": "EEE-B",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-eee6-a",
+      "semesterId": "sem-eee-6",
+      "name": "EEE-A",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-eee6-b",
+      "semesterId": "sem-eee-6",
+      "name": "EEE-B",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-eee7-a",
+      "semesterId": "sem-eee-7",
+      "name": "EEE-A",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-eee7-b",
+      "semesterId": "sem-eee-7",
+      "name": "EEE-B",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-eee8-a",
+      "semesterId": "sem-eee-8",
+      "name": "EEE-A",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-eee8-b",
+      "semesterId": "sem-eee-8",
+      "name": "EEE-B",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-civil1-a",
+      "semesterId": "sem-civil-1",
+      "name": "CIVIL-A",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.238Z"
+    },
+    {
+      "id": "sec-civil1-b",
+      "semesterId": "sem-civil-1",
+      "name": "CIVIL-B",
+      "createdAt": "2026-10-22T09:47:36.238Z",
+      "updatedAt": "2026-10-22T09:47:36.239Z"
+    },
+    {
+      "id": "sec-civil2-a",
+      "semesterId": "sem-civil-2",
+      "name": "CIVIL-A",
+      "createdAt": "2026-10-22T09:47:36.239Z",
+      "updatedAt": "2026-10-22T09:47:36.239Z"
+    },
+    {
+      "id": "sec-civil2-b",
+      "semesterId": "sem-civil-2",
+      "name": "CIVIL-B",
+      "createdAt": "2026-10-22T09:47:36.239Z",
+      "updatedAt": "2026-10-22T09:47:36.239Z"
+    },
+    {
+      "id": "sec-civil3-a",
+      "semesterId": "sem-civil-3",
+      "name": "CIVIL-A",
+      "createdAt": "2026-10-22T09:47:36.239Z",
+      "updatedAt": "2026-10-22T09:47:36.239Z"
+    },
+    {
+      "id": "sec-civil3-b",
+      "semesterId": "sem-civil-3",
+      "name": "CIVIL-B",
+      "createdAt": "2026-10-22T09:47:36.239Z",
+      "updatedAt": "2026-10-22T09:47:36.239Z"
+    },
+    {
+      "id": "sec-civil4-a",
+      "semesterId": "sem-civil-4",
+      "name": "CIVIL-A",
+      "createdAt": "2026-10-22T09:47:36.239Z",
+      "updatedAt": "2026-10-22T09:47:36.239Z"
+    },
+    {
+      "id": "sec-civil4-b",
+      "semesterId": "sem-civil-4",
+      "name": "CIVIL-B",
+      "createdAt": "2026-10-22T09:47:36.239Z",
+      "updatedAt": "2026-10-22T09:47:36.239Z"
+    },
+    {
+      "id": "sec-civil5-a",
+      "semesterId": "sem-civil-5",
+      "name": "CIVIL-A",
+      "createdAt": "2026-10-22T09:47:36.239Z",
+      "updatedAt": "2026-10-22T09:47:36.239Z"
+    },
+    {
+      "id": "sec-civil5-b",
+      "semesterId": "sem-civil-5",
+      "name": "CIVIL-B",
+      "createdAt": "2026-10-22T09:47:36.239Z",
+      "updatedAt": "2026-10-22T09:47:36.239Z"
+    },
+    {
+      "id": "sec-civil6-a",
+      "semesterId": "sem-civil-6",
+      "name": "CIVIL-A",
+      "createdAt": "2026-10-22T09:47:36.239Z",
+      "updatedAt": "2026-10-22T09:47:36.239Z"
+    },
+    {
+      "id": "sec-civil6-b",
+      "semesterId": "sem-civil-6",
+      "name": "CIVIL-B",
+      "createdAt": "2026-10-22T09:47:36.239Z",
+      "updatedAt": "2026-10-22T09:47:36.239Z"
+    },
+    {
+      "id": "sec-civil7-a",
+      "semesterId": "sem-civil-7",
+      "name": "CIVIL-A",
+      "createdAt": "2026-10-22T09:47:36.239Z",
+      "updatedAt": "2026-10-22T09:47:36.239Z"
+    },
+    {
+      "id": "sec-civil7-b",
+      "semesterId": "sem-civil-7",
+      "name": "CIVIL-B",
+      "createdAt": "2026-10-22T09:47:36.239Z",
+      "updatedAt": "2026-10-22T09:47:36.239Z"
+    },
+    {
+      "id": "sec-civil8-a",
+      "semesterId": "sem-civil-8",
+      "name": "CIVIL-A",
+      "createdAt": "2026-10-22T09:47:36.239Z",
+      "updatedAt": "2026-10-22T09:47:36.239Z"
+    },
+    {
+      "id": "sec-civil8-b",
+      "semesterId": "sem-civil-8",
+      "name": "CIVIL-B",
+      "createdAt": "2026-10-22T09:47:36.239Z",
+      "updatedAt": "2026-10-22T09:47:36.239Z"
     }
   ],
   "subjects": [
@@ -64,8 +986,8 @@
       "description": "Core concepts of process scheduling, synchronization, deadlocks, memory management, and file systems.",
       "unitsCount": 6,
       "topicsCount": 42,
-      "createdAt": "2026-10-17T06:38:24.370Z",
-      "updatedAt": "2026-10-17T06:38:24.370Z"
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
     },
     {
       "id": "sub-dbms",
@@ -76,8 +998,8 @@
       "description": "Relational data models, normalization, transaction processing, concurrency control, and indexing structures.",
       "unitsCount": 5,
       "topicsCount": 38,
-      "createdAt": "2026-10-17T06:38:24.370Z",
-      "updatedAt": "2026-10-17T06:38:24.370Z"
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
     },
     {
       "id": "sub-cn",
@@ -88,8 +1010,8 @@
       "description": "Network architectures, protocol layers, routing algorithms, transport layer protocols, and congestion control.",
       "unitsCount": 5,
       "topicsCount": 35,
-      "createdAt": "2026-10-17T06:38:24.370Z",
-      "updatedAt": "2026-10-17T06:38:24.370Z"
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
     },
     {
       "id": "sub-cd",
@@ -100,8 +1022,8 @@
       "description": "Lexical analysis, syntax parsing, semantic analysis, intermediate code generation, and optimization techniques.",
       "unitsCount": 5,
       "topicsCount": 30,
-      "createdAt": "2026-10-17T06:38:24.370Z",
-      "updatedAt": "2026-10-17T06:38:24.370Z"
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
     },
     {
       "id": "sub-ai",
@@ -112,8 +1034,8 @@
       "description": "Heuristic search, knowledge representation, probabilistic reasoning, game theory, and expert systems.",
       "unitsCount": 5,
       "topicsCount": 28,
-      "createdAt": "2026-10-17T06:38:24.370Z",
-      "updatedAt": "2026-10-17T06:38:24.370Z"
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
     },
     {
       "id": "sub-se",
@@ -124,8 +1046,84 @@
       "description": "Software lifecycle models, agile methodologies, requirements engineering, testing strategies, and architectural design.",
       "unitsCount": 5,
       "topicsCount": 26,
-      "createdAt": "2026-10-17T06:38:24.370Z",
-      "updatedAt": "2026-10-17T06:38:24.370Z"
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
+    },
+    {
+      "id": "sub-dsp",
+      "branchId": "branch-ece",
+      "semesterId": "sem-ece-7",
+      "name": "Digital Signal Processing",
+      "code": "EC701",
+      "description": "Discrete-time signals, Z-transform, DFT/FFT algorithms, FIR/IIR filter design, and multirate DSP.",
+      "unitsCount": 5,
+      "topicsCount": 35,
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
+    },
+    {
+      "id": "sub-vlsi",
+      "branchId": "branch-ece",
+      "semesterId": "sem-ece-7",
+      "name": "VLSI Design",
+      "code": "EC702",
+      "description": "MOS transistor theory, CMOS logic circuits, stick diagrams, layout design rules, and timing analysis.",
+      "unitsCount": 5,
+      "topicsCount": 30,
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
+    },
+    {
+      "id": "sub-mwc",
+      "branchId": "branch-ece",
+      "semesterId": "sem-ece-7",
+      "name": "Microwave Engineering",
+      "code": "EC703",
+      "description": "Waveguides, microwave passive devices, scattering matrix, klystrons, magnetrons, and radar systems.",
+      "unitsCount": 5,
+      "topicsCount": 28,
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
+    },
+    {
+      "id": "sub-ee-circuits",
+      "branchId": "branch-eee",
+      "semesterId": "sem-7",
+      "name": "Basic Electrical & AC Circuits",
+      "code": "EE201",
+      "description": "AC circuit analysis, RLC series and parallel resonance, impedance calculation, phasors, and power factor correction.",
+      "unitsCount": 5,
+      "topicsCount": 30,
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
+    },
+    {
+      "id": "sub-ce-mechanics",
+      "branchId": "branch-civil",
+      "semesterId": "sem-7",
+      "name": "Engineering Mechanics & Strength of Materials",
+      "code": "CE301",
+      "description": "Stress-strain behavior, Hookes Law, axial deformation, Poisson ratio, shear force, and bending moment diagrams.",
+      "unitsCount": 5,
+      "topicsCount": 28,
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
+    },
+    {
+      "id": "sub-os-6",
+      "branchId": "branch-cse",
+      "semesterId": "sem-6",
+      "name": "Operating Systems",
+      "code": "CS601",
+      "description": "Processes, concurrency, memory management, and file systems.",
+      "unitsCount": 5,
+      "topicsCount": 24,
+      "materialsCount": 4,
+      "assignmentsCount": 3,
+      "papersCount": 2,
+      "questionsCount": 45,
+      "createdAt": "2026-10-22T10:10:15.590Z",
+      "updatedAt": "2026-10-22T10:10:15.591Z"
     }
   ],
   "users": [
@@ -133,82 +1131,90 @@
       "id": "user-admin",
       "institutionId": "inst-svec-01",
       "email": "admin@svec.edu",
-      "passwordHash": "$2a$10$aQP2U88LpE/DME511eixo.ZKJyc/IIPqF60pmxCVXzO.j3sYaC7vm",
+      "passwordHash": "$2a$10$HQAw/iuvjwKqH2mesu81ZORFtdyMjheGspjehbTPqIKIt6kxgXcWW",
       "name": "Academic Dean Office",
       "role": "ADMIN",
       "department": "Dean Academics",
       "designation": "Chief Academic Officer",
       "isActive": true,
-      "createdAt": "2026-10-17T06:38:24.370Z",
-      "updatedAt": "2026-10-17T06:38:24.370Z"
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
     },
     {
       "id": "user-kumar",
       "institutionId": "inst-svec-01",
       "email": "dr.kumar@svec.edu",
-      "passwordHash": "$2a$10$0j3pQlrlah0QfQj5o.neeej6IxtwO1rfaU.c4UWPZK9Eq5ruKgtPu",
+      "passwordHash": "$2a$10$JTHROICR.naux6/0QzSqL.do0U5jI22gnngzxoiCRoT/1SjWBkIKO",
       "name": "Dr. P. Kumar",
       "role": "FACULTY",
       "department": "Computer Science & Engineering",
       "designation": "Professor & Head of Systems",
       "isActive": true,
-      "createdAt": "2026-10-17T06:38:24.370Z",
-      "updatedAt": "2026-10-17T06:38:24.370Z"
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
     },
     {
       "id": "user-sunitha",
       "institutionId": "inst-svec-01",
       "email": "sunitha@svec.edu",
-      "passwordHash": "$2a$10$0j3pQlrlah0QfQj5o.neeej6IxtwO1rfaU.c4UWPZK9Eq5ruKgtPu",
+      "passwordHash": "$2a$10$JTHROICR.naux6/0QzSqL.do0U5jI22gnngzxoiCRoT/1SjWBkIKO",
       "name": "Prof. K. Sunitha",
       "role": "FACULTY",
       "department": "Computer Science & Engineering",
       "designation": "Associate Professor",
       "isActive": true,
-      "createdAt": "2026-10-17T06:38:24.370Z",
-      "updatedAt": "2026-10-17T06:38:24.370Z"
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
     },
     {
       "id": "user-murthy",
       "institutionId": "inst-svec-01",
       "email": "murthy@svec.edu",
-      "passwordHash": "$2a$10$0j3pQlrlah0QfQj5o.neeej6IxtwO1rfaU.c4UWPZK9Eq5ruKgtPu",
+      "passwordHash": "$2a$10$JTHROICR.naux6/0QzSqL.do0U5jI22gnngzxoiCRoT/1SjWBkIKO",
       "name": "Dr. R. Murthy",
       "role": "FACULTY",
       "department": "Computer Science & Engineering",
       "designation": "Professor",
       "isActive": true,
-      "createdAt": "2026-10-17T06:38:24.370Z",
-      "updatedAt": "2026-10-17T06:38:24.370Z"
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
+    },
+    {
+      "id": "user-rajesh",
+      "institutionId": "inst-svec-01",
+      "email": "rajesh@svec.edu",
+      "passwordHash": "$2a$10$JTHROICR.naux6/0QzSqL.do0U5jI22gnngzxoiCRoT/1SjWBkIKO",
+      "name": "Prof. B. Rajesh",
+      "role": "FACULTY",
+      "department": "Computer Science & Engineering",
+      "designation": "Assistant Professor",
+      "isActive": true,
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
+    },
+    {
+      "id": "user-anitha",
+      "institutionId": "inst-svec-01",
+      "email": "anitha@svec.edu",
+      "passwordHash": "$2a$10$JTHROICR.naux6/0QzSqL.do0U5jI22gnngzxoiCRoT/1SjWBkIKO",
+      "name": "Dr. V. Anitha",
+      "role": "FACULTY",
+      "department": "Electronics & Communication Engineering",
+      "designation": "Associate Professor",
+      "isActive": true,
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
     }
   ],
   "facultyAssignments": [
     {
-      "id": "fa-1",
-      "facultyId": "user-kumar",
-      "subjectId": "sub-os",
-      "sectionId": "sec-csea",
-      "academicYear": "2026-2027",
-      "createdAt": "2026-10-17T06:38:24.370Z",
-      "updatedAt": "2026-10-17T06:38:24.370Z"
-    },
-    {
-      "id": "fa-2",
-      "facultyId": "user-kumar",
+      "id": "fa-3",
+      "facultyId": "user-rajesh",
       "subjectId": "sub-os",
       "sectionId": "sec-cseb",
       "academicYear": "2026-2027",
-      "createdAt": "2026-10-17T06:38:24.370Z",
-      "updatedAt": "2026-10-17T06:38:24.370Z"
-    },
-    {
-      "id": "fa-3",
-      "facultyId": "user-kumar",
-      "subjectId": "sub-cn",
-      "sectionId": "sec-csea",
-      "academicYear": "2026-2027",
-      "createdAt": "2026-10-17T06:38:24.370Z",
-      "updatedAt": "2026-10-17T06:38:24.370Z"
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
     },
     {
       "id": "fa-4",
@@ -216,17 +1222,71 @@
       "subjectId": "sub-dbms",
       "sectionId": "sec-csea",
       "academicYear": "2026-2027",
-      "createdAt": "2026-10-17T06:38:24.370Z",
-      "updatedAt": "2026-10-17T06:38:24.370Z"
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
     },
     {
       "id": "fa-5",
+      "facultyId": "user-sunitha",
+      "subjectId": "sub-dbms",
+      "sectionId": "sec-cseb",
+      "academicYear": "2026-2027",
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
+    },
+    {
+      "id": "fa-6",
       "facultyId": "user-murthy",
       "subjectId": "sub-cd",
       "sectionId": "sec-csea",
       "academicYear": "2026-2027",
-      "createdAt": "2026-10-17T06:38:24.370Z",
-      "updatedAt": "2026-10-17T06:38:24.370Z"
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
+    },
+    {
+      "id": "fa-7",
+      "facultyId": "user-anitha",
+      "subjectId": "sub-dsp",
+      "sectionId": "sec-ecea",
+      "academicYear": "2026-2027",
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
+    },
+    {
+      "id": "fa-8",
+      "facultyId": "user-anitha",
+      "subjectId": "sub-vlsi",
+      "sectionId": "sec-ecea",
+      "academicYear": "2026-2027",
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
+    },
+    {
+      "id": "fa-kumar-1",
+      "facultyId": "user-kumar",
+      "subjectId": "sub-dbms",
+      "sectionId": "sec-csea",
+      "academicYear": "2026-2027",
+      "createdAt": "2026-10-22T10:10:15.591Z",
+      "updatedAt": "2026-10-22T10:10:15.591Z"
+    },
+    {
+      "id": "fa-kumar-2",
+      "facultyId": "user-kumar",
+      "subjectId": "sub-cn",
+      "sectionId": "sec-cseb",
+      "academicYear": "2026-2027",
+      "createdAt": "2026-10-22T10:10:15.591Z",
+      "updatedAt": "2026-10-22T10:10:15.591Z"
+    },
+    {
+      "id": "fa-kumar-3",
+      "facultyId": "user-kumar",
+      "subjectId": "sub-os-6",
+      "sectionId": "sec-cse6-a",
+      "academicYear": "2026-2027",
+      "createdAt": "2026-10-22T10:10:15.591Z",
+      "updatedAt": "2026-10-22T10:10:15.591Z"
     }
   ],
   "materials": [
@@ -246,8 +1306,8 @@
       "sectionId": "sec-csea",
       "facultyId": "user-kumar",
       "downloadsCount": 142,
-      "createdAt": "2026-10-17T04:38:24.371Z",
-      "updatedAt": "2026-10-17T06:38:24.371Z"
+      "createdAt": "2026-10-17T06:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
     },
     {
       "id": "mat-2",
@@ -265,8 +1325,8 @@
       "sectionId": "sec-csea",
       "facultyId": "user-kumar",
       "downloadsCount": 98,
-      "createdAt": "2026-10-16T06:38:24.371Z",
-      "updatedAt": "2026-10-17T06:38:24.371Z"
+      "createdAt": "2026-10-16T08:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
     },
     {
       "id": "mat-3",
@@ -284,8 +1344,8 @@
       "sectionId": "sec-csea",
       "facultyId": "user-sunitha",
       "downloadsCount": 115,
-      "createdAt": "2026-10-15T06:38:24.371Z",
-      "updatedAt": "2026-10-17T06:38:24.371Z"
+      "createdAt": "2026-10-15T08:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
     },
     {
       "id": "mat-4",
@@ -303,8 +1363,8 @@
       "sectionId": "sec-csea",
       "facultyId": "user-kumar",
       "downloadsCount": 87,
-      "createdAt": "2026-10-14T06:38:24.371Z",
-      "updatedAt": "2026-10-17T06:38:24.371Z"
+      "createdAt": "2026-10-14T08:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
     },
     {
       "id": "mat-5",
@@ -322,8 +1382,104 @@
       "sectionId": "sec-csea",
       "facultyId": "user-murthy",
       "downloadsCount": 164,
-      "createdAt": "2026-10-12T06:38:24.371Z",
-      "updatedAt": "2026-10-17T06:38:24.371Z"
+      "createdAt": "2026-10-12T08:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
+    },
+    {
+      "id": "mat-6",
+      "title": "Operating Systems - CPU Scheduling & Synchronization (Sec-B Class Notes)",
+      "description": "Handwritten class lecture notes and solved numerical examples for CSE-B, covering SJF, RR quantum analysis, and Dining Philosophers monitor solution.",
+      "type": "NOTES",
+      "unit": 2,
+      "fileUrl": "/uploads/OS_SecB_CPU_Scheduling_ProfRajesh.pdf",
+      "fileName": "OS_SecB_CPU_Scheduling_ProfRajesh.pdf",
+      "fileSize": 4500000,
+      "mimeType": "application/pdf",
+      "storageKey": "OS_SecB_CPU_Scheduling_ProfRajesh.pdf",
+      "status": "PUBLISHED",
+      "subjectId": "sub-os",
+      "sectionId": "sec-cseb",
+      "facultyId": "user-rajesh",
+      "downloadsCount": 88,
+      "createdAt": "2026-10-17T05:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
+    },
+    {
+      "id": "mat-7",
+      "title": "OS Unit 3: Deadlock Avoidance & Banker’s Algorithm Handout (Sec-B)",
+      "description": "Worked step-by-step examples on Resource-Allocation Graphs (RAG), Safety Algorithm, and Resource-Request Algorithm specifically for CSE-B students.",
+      "type": "NOTES",
+      "unit": 3,
+      "fileUrl": "/uploads/OS_SecB_Deadlocks_Handout.pdf",
+      "fileName": "OS_SecB_Deadlocks_Handout.pdf",
+      "fileSize": 3200000,
+      "mimeType": "application/pdf",
+      "storageKey": "OS_SecB_Deadlocks_Handout.pdf",
+      "status": "PUBLISHED",
+      "subjectId": "sub-os",
+      "sectionId": "sec-cseb",
+      "facultyId": "user-rajesh",
+      "downloadsCount": 74,
+      "createdAt": "2026-10-16T04:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
+    },
+    {
+      "id": "mat-8",
+      "title": "Digital Signal Processing - Unit 1 Sampling & Discrete Transforms Notes",
+      "description": "Lecture notes covering continuous-to-discrete conversion, Nyquist sampling criteria, impulse train sampling, aliasing effects, and DTFT basics.",
+      "type": "NOTES",
+      "unit": 1,
+      "fileUrl": "/uploads/DSP_Unit1_Sampling_Theorem_Notes.pdf",
+      "fileName": "DSP_Unit1_Sampling_Theorem_Notes.pdf",
+      "fileSize": 5100000,
+      "mimeType": "application/pdf",
+      "storageKey": "DSP_Unit1_Sampling_Theorem_Notes.pdf",
+      "status": "PUBLISHED",
+      "subjectId": "sub-dsp",
+      "sectionId": "sec-ecea",
+      "facultyId": "user-anitha",
+      "downloadsCount": 112,
+      "createdAt": "2026-10-17T02:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
+    },
+    {
+      "id": "mat-9",
+      "title": "CMOS VLSI Design - Stick Diagrams & Layout Design Rules PPT",
+      "description": "Presentation slides on CMOS inverter layout, Euler path method for complex gates, lambda-based design rules, and DRC guidelines.",
+      "type": "PPT",
+      "unit": 2,
+      "fileUrl": "/uploads/VLSI_Unit2_Stick_Diagrams_Layout.pptx",
+      "fileName": "VLSI_Unit2_Stick_Diagrams_Layout.pptx",
+      "fileSize": 6400000,
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "storageKey": "VLSI_Unit2_Stick_Diagrams_Layout.pptx",
+      "status": "PUBLISHED",
+      "subjectId": "sub-vlsi",
+      "sectionId": "sec-ecea",
+      "facultyId": "user-anitha",
+      "downloadsCount": 65,
+      "createdAt": "2026-10-15T20:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
+    },
+    {
+      "id": "mat-draft-dbms-01",
+      "title": "Unit 4 Lecture Notes: B+ Tree Indexing & Hashing",
+      "description": "Draft slides on dense vs sparse indexes and multi-level indexing.",
+      "type": "NOTES",
+      "unit": 4,
+      "fileUrl": "/uploads/b_tree_indexing_draft.pdf",
+      "fileName": "b_tree_indexing_draft.pdf",
+      "fileSize": 2450000,
+      "mimeType": "application/pdf",
+      "storageKey": "b_tree_indexing_draft.pdf",
+      "status": "DRAFT",
+      "subjectId": "sub-dbms",
+      "sectionId": "sec-csea",
+      "facultyId": "user-kumar",
+      "facultyAssignmentId": "fa-kumar-1",
+      "downloadsCount": 0,
+      "createdAt": "2026-10-22T06:10:15.591Z",
+      "updatedAt": "2026-10-22T06:10:15.591Z"
     }
   ],
   "assignments": [
@@ -332,23 +1488,23 @@
       "title": "OS Assignment 03: Process Scheduling & Banker’s Algorithm",
       "description": "Solve the 4 numerical problems on Round Robin scheduling (quantum=4ms) and compute safety sequence for the 5-process allocation matrix provided.",
       "unit": 2,
-      "deadline": "2026-10-20T06:38:24.371Z",
+      "deadline": "2026-10-20T08:27:37.786Z",
       "fileUrl": "/uploads/OS_Assignment_03_Questions.pdf",
       "fileName": "OS_Assignment_03_Questions.pdf",
-      "submissionMethod": "Submit handwritten solutions in class on Friday, 10:30 AM.",
+      "submissionMethod": "Submit handwritten solutions in class on Friday, 10:30 AM to Dr. Kumar.",
       "status": "PUBLISHED",
       "subjectId": "sub-os",
       "sectionId": "sec-csea",
       "facultyId": "user-kumar",
-      "createdAt": "2026-10-16T06:38:24.371Z",
-      "updatedAt": "2026-10-17T06:38:24.371Z"
+      "createdAt": "2026-10-16T08:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
     },
     {
       "id": "asg-2",
       "title": "DBMS Assignment 03: Normalization & BCNF Decomposition",
       "description": "Given schema R(A, B, C, D, E) and FDs F={A->BC, CD->E, B->D, E->A}, find candidate keys and decompose R into BCNF while checking dependency preservation.",
       "unit": 3,
-      "deadline": "2026-10-22T06:38:24.371Z",
+      "deadline": "2026-10-22T08:27:37.786Z",
       "fileUrl": "/uploads/DBMS_Assignment_03_Decomposition.pdf",
       "fileName": "DBMS_Assignment_03_Decomposition.pdf",
       "submissionMethod": "Submit hardcopy during tutorial hour to Prof. Sunitha.",
@@ -356,15 +1512,15 @@
       "subjectId": "sub-dbms",
       "sectionId": "sec-csea",
       "facultyId": "user-sunitha",
-      "createdAt": "2026-10-15T06:38:24.371Z",
-      "updatedAt": "2026-10-17T06:38:24.371Z"
+      "createdAt": "2026-10-15T08:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
     },
     {
       "id": "asg-3",
       "title": "Compiler Design Assignment 02: LL(1) Parsing Table Construction",
       "description": "Eliminate left recursion and left factoring from the provided grammar, compute FIRST and FOLLOW sets, and verify if the grammar is LL(1).",
       "unit": 2,
-      "deadline": "2026-10-24T06:38:24.371Z",
+      "deadline": "2026-10-24T08:27:37.786Z",
       "fileUrl": "/uploads/CD_Assignment_02_Grammar.pdf",
       "fileName": "CD_Assignment_02_Grammar.pdf",
       "submissionMethod": "Submit to Dr. Murthy at the beginning of Tuesday lecture.",
@@ -372,8 +1528,85 @@
       "subjectId": "sub-cd",
       "sectionId": "sec-csea",
       "facultyId": "user-murthy",
-      "createdAt": "2026-10-16T18:38:24.371Z",
-      "updatedAt": "2026-10-17T06:38:24.371Z"
+      "createdAt": "2026-10-16T20:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
+    },
+    {
+      "id": "asg-4",
+      "title": "OS Assignment 03 (Sec-B): CPU Burst Calculations & Priority Scheduling",
+      "description": "Calculate average turnaround and waiting time for non-preemptive priority scheduling with aging. Include Gantt charts for each test case.",
+      "unit": 2,
+      "deadline": "2026-10-21T08:27:37.786Z",
+      "fileUrl": "/uploads/OS_SecB_Assignment_03.pdf",
+      "fileName": "OS_SecB_Assignment_03.pdf",
+      "submissionMethod": "Submit handwritten papers directly to Prof. Rajesh in Room 204.",
+      "status": "PUBLISHED",
+      "subjectId": "sub-os",
+      "sectionId": "sec-cseb",
+      "facultyId": "user-rajesh",
+      "createdAt": "2026-10-16T14:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
+    },
+    {
+      "id": "asg-5",
+      "title": "DSP Assignment 01: Nyquist Sampling & Aliasing Frequency Analysis",
+      "description": "Determine the Nyquist rate and Nyquist interval for x(t) = 3 cos(2000πt) + 5 sin(6000πt). Compute the discrete frequencies obtained when sampled at Fs = 4000 Hz.",
+      "unit": 1,
+      "deadline": "2026-10-22T08:27:37.786Z",
+      "fileUrl": "/uploads/DSP_Assignment_01_Nyquist.pdf",
+      "fileName": "DSP_Assignment_01_Nyquist.pdf",
+      "submissionMethod": "Submit to Dr. Anitha during Wednesday DSP tutorial.",
+      "status": "PUBLISHED",
+      "subjectId": "sub-dsp",
+      "sectionId": "sec-ecea",
+      "facultyId": "user-anitha",
+      "createdAt": "2026-10-16T12:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
+    },
+    {
+      "id": "asg-draft-dbms-04",
+      "title": "Assignment 04 · Normalization & Indexing",
+      "description": "Construct B+ tree indexes and perform multi-valued dependency decomposition on schema R.",
+      "unit": 4,
+      "deadline": "2026-10-27T10:10:15.591Z",
+      "submissionMethod": "Submit handwritten solutions in class on Friday.",
+      "status": "DRAFT",
+      "subjectId": "sub-dbms",
+      "sectionId": "sec-csea",
+      "facultyId": "user-kumar",
+      "facultyAssignmentId": "fa-kumar-1",
+      "createdAt": "2026-10-22T08:10:15.591Z",
+      "updatedAt": "2026-10-22T08:10:15.591Z"
+    },
+    {
+      "id": "asg-pub-dbms-03",
+      "title": "Assignment 03 · Normalization & BCNF",
+      "description": "Solve candidate key problems and decompose schema into 3NF and BCNF.",
+      "unit": 3,
+      "deadline": "2026-10-22T23:59:00.000Z",
+      "submissionMethod": "Submit handwritten solutions in class.",
+      "status": "PUBLISHED",
+      "subjectId": "sub-dbms",
+      "sectionId": "sec-csea",
+      "facultyId": "user-kumar",
+      "facultyAssignmentId": "fa-kumar-1",
+      "createdAt": "2026-10-19T10:10:15.591Z",
+      "updatedAt": "2026-10-19T10:10:15.591Z"
+    },
+    {
+      "id": "asg-pub-cn-02",
+      "title": "Assignment 02 · Subnetting & CIDR Routing",
+      "description": "Calculate subnet masks, usable hosts, and CIDR prefix aggregation.",
+      "unit": 2,
+      "deadline": "2026-10-25T23:59:00.000Z",
+      "submissionMethod": "Submit handwritten solutions in class.",
+      "status": "PUBLISHED",
+      "subjectId": "sub-cn",
+      "sectionId": "sec-cseb",
+      "facultyId": "user-kumar",
+      "facultyAssignmentId": "fa-kumar-2",
+      "createdAt": "2026-10-20T10:10:15.591Z",
+      "updatedAt": "2026-10-20T10:10:15.591Z"
     }
   ],
   "questionPapers": [
@@ -389,8 +1622,8 @@
       "branchId": "branch-cse",
       "semesterId": "sem-7",
       "subjectId": "sub-os",
-      "createdAt": "2026-09-17T06:38:24.371Z",
-      "updatedAt": "2026-10-17T06:38:24.371Z"
+      "createdAt": "2026-09-17T08:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
     },
     {
       "id": "qp-2",
@@ -404,8 +1637,8 @@
       "branchId": "branch-cse",
       "semesterId": "sem-7",
       "subjectId": "sub-os",
-      "createdAt": "2025-10-17T06:38:24.371Z",
-      "updatedAt": "2026-10-17T06:38:24.371Z"
+      "createdAt": "2025-10-17T08:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
     },
     {
       "id": "qp-3",
@@ -419,8 +1652,8 @@
       "branchId": "branch-cse",
       "semesterId": "sem-7",
       "subjectId": "sub-os",
-      "createdAt": "2026-08-18T06:38:24.371Z",
-      "updatedAt": "2026-10-17T06:38:24.371Z"
+      "createdAt": "2026-08-18T08:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
     },
     {
       "id": "qp-4",
@@ -434,8 +1667,8 @@
       "branchId": "branch-cse",
       "semesterId": "sem-7",
       "subjectId": "sub-dbms",
-      "createdAt": "2026-10-07T06:38:24.371Z",
-      "updatedAt": "2026-10-17T06:38:24.371Z"
+      "createdAt": "2026-10-07T08:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
     },
     {
       "id": "qp-5",
@@ -449,8 +1682,23 @@
       "branchId": "branch-cse",
       "semesterId": "sem-7",
       "subjectId": "sub-cn",
-      "createdAt": "2025-12-21T06:38:24.371Z",
-      "updatedAt": "2026-10-17T06:38:24.371Z"
+      "createdAt": "2025-12-21T08:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
+    },
+    {
+      "id": "qp-6",
+      "title": "2026 Digital Signal Processing End Semester Examination Paper",
+      "academicYear": "2026",
+      "examType": "END_SEMESTER",
+      "fileUrl": "/uploads/DSP_EndSem_2026.pdf",
+      "fileName": "DSP_EndSem_2026.pdf",
+      "fileSize": 1920000,
+      "status": "PUBLISHED",
+      "branchId": "branch-ece",
+      "semesterId": "sem-ece-7",
+      "subjectId": "sub-dsp",
+      "createdAt": "2026-09-22T08:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
     }
   ],
   "questions": [
@@ -474,8 +1722,8 @@
       "repeatCount": 5,
       "status": "PUBLISHED",
       "facultyId": "user-kumar",
-      "createdAt": "2026-10-17T06:38:24.371Z",
-      "updatedAt": "2026-10-17T06:38:24.371Z"
+      "createdAt": "2026-10-17T08:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
     },
     {
       "id": "q-2",
@@ -497,8 +1745,8 @@
       "repeatCount": 4,
       "status": "PUBLISHED",
       "facultyId": "user-kumar",
-      "createdAt": "2026-10-17T06:38:24.371Z",
-      "updatedAt": "2026-10-17T06:38:24.371Z"
+      "createdAt": "2026-10-17T08:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
     },
     {
       "id": "q-3",
@@ -520,8 +1768,8 @@
       "repeatCount": 4,
       "status": "PUBLISHED",
       "facultyId": "user-kumar",
-      "createdAt": "2026-10-17T06:38:24.371Z",
-      "updatedAt": "2026-10-17T06:38:24.371Z"
+      "createdAt": "2026-10-17T08:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
     },
     {
       "id": "q-4",
@@ -543,8 +1791,8 @@
       "repeatCount": 4,
       "status": "PUBLISHED",
       "facultyId": "user-kumar",
-      "createdAt": "2026-10-17T06:38:24.371Z",
-      "updatedAt": "2026-10-17T06:38:24.371Z"
+      "createdAt": "2026-10-17T08:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
     },
     {
       "id": "q-5",
@@ -566,8 +1814,8 @@
       "repeatCount": 4,
       "status": "PUBLISHED",
       "facultyId": "user-sunitha",
-      "createdAt": "2026-10-17T06:38:24.371Z",
-      "updatedAt": "2026-10-17T06:38:24.371Z"
+      "createdAt": "2026-10-17T08:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
     },
     {
       "id": "q-6",
@@ -589,8 +1837,8 @@
       "repeatCount": 5,
       "status": "PUBLISHED",
       "facultyId": "user-sunitha",
-      "createdAt": "2026-10-17T06:38:24.371Z",
-      "updatedAt": "2026-10-17T06:38:24.371Z"
+      "createdAt": "2026-10-17T08:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
     },
     {
       "id": "q-7",
@@ -612,8 +1860,8 @@
       "repeatCount": 3,
       "status": "PUBLISHED",
       "facultyId": "user-kumar",
-      "createdAt": "2026-10-17T06:38:24.371Z",
-      "updatedAt": "2026-10-17T06:38:24.371Z"
+      "createdAt": "2026-10-17T08:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
     },
     {
       "id": "q-8",
@@ -635,8 +1883,54 @@
       "repeatCount": 3,
       "status": "PUBLISHED",
       "facultyId": "user-murthy",
-      "createdAt": "2026-10-17T06:38:24.371Z",
-      "updatedAt": "2026-10-17T06:38:24.371Z"
+      "createdAt": "2026-10-17T08:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
+    },
+    {
+      "id": "q-9",
+      "subjectId": "sub-dsp",
+      "unit": 1,
+      "topic": "Nyquist-Shannon Sampling",
+      "difficulty": "EASY",
+      "type": "MCQ",
+      "questionText": "For a band-limited continuous-time signal with maximum frequency component fm = 4 kHz, what is the minimum theoretical Nyquist sampling rate required to avoid aliasing?",
+      "options": [
+        "4,000 samples/sec",
+        "8,000 samples/sec",
+        "2,000 samples/sec",
+        "16,000 samples/sec"
+      ],
+      "correctAnswer": "1",
+      "explanation": "According to the Nyquist-Shannon sampling theorem, the minimum sampling frequency must be at least twice the highest frequency present in the band-limited signal: Fs >= 2 * fm = 2 * 4 kHz = 8,000 Hz.",
+      "frequency": 15,
+      "repeatCount": 6,
+      "status": "PUBLISHED",
+      "facultyId": "user-anitha",
+      "createdAt": "2026-10-17T08:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
+    },
+    {
+      "id": "q-10",
+      "subjectId": "sub-dsp",
+      "unit": 1,
+      "topic": "Aliasing & Anti-Aliasing Filters",
+      "difficulty": "MEDIUM",
+      "type": "MCQ",
+      "questionText": "What analog filter circuit is mandatory before an Analog-to-Digital Converter (ADC) to suppress frequencies above the folding frequency Fs/2?",
+      "options": [
+        "High-pass differentiator",
+        "Anti-aliasing low-pass filter",
+        "Band-stop notch filter",
+        "All-pass phase corrector"
+      ],
+      "correctAnswer": "1",
+      "explanation": "An anti-aliasing low-pass filter cuts off all analog frequency components above the Nyquist cutoff (Fs/2). If higher frequencies enter the sampler, they fold back into the baseband spectrum as spurious phantom aliases that cannot be separated later.",
+      "frequency": 13,
+      "repeatCount": 4,
+      "status": "PUBLISHED",
+      "facultyId": "user-anitha",
+      "createdAt": "2026-10-17T08:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
     }
   ],
   "atlasTopics": [
@@ -645,6 +1939,8 @@
       "title": "CPU Scheduling Simulator",
       "slug": "cpu-scheduling",
       "subjectId": "sub-os",
+      "department": "CSE",
+      "classroomCode": "OS-CPU-01",
       "unit": 2,
       "topic": "Process Scheduling",
       "difficulty": "MEDIUM",
@@ -664,15 +1960,17 @@
       "commonMistakes": "1. Forgetting that Turnaround Time includes the execution time itself.\n2. Confusing Non-preemptive SJF with Preemptive SJF (SRTF).\n3. Neglecting process arrival time when calculating the Gantt chart idle gaps.",
       "quickRevision": "• FCFS: Simple, non-preemptive, suffers from Convoy Effect.\n• SJF: Provably optimal for minimum average waiting time, but burst time is hard to predict.\n• Round Robin: Fair and interactive; performance depends critically on Time Quantum length.\n• Priority: Subject to starvation, resolved via aging.",
       "status": "PUBLISHED",
-      "viewCount": 1420,
-      "createdAt": "2026-10-17T06:38:24.371Z",
-      "updatedAt": "2026-10-17T06:38:24.371Z"
+      "viewCount": 1435,
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
     },
     {
       "id": "atlas-avl",
       "title": "AVL Tree & Rotations",
       "slug": "avl-tree",
       "subjectId": "sub-os",
+      "department": "CSE",
+      "classroomCode": "DS-AVL-01",
       "unit": 1,
       "topic": "Self-Balancing Trees",
       "difficulty": "MEDIUM",
@@ -693,14 +1991,16 @@
       "quickRevision": "• Balance Factor must be in {-1, 0, +1}.\n• LL Imbalance -> Single Right Rotation.\n• RR Imbalance -> Single Left Rotation.\n• LR Imbalance -> Left rotate Left Child, then Right rotate Root.\n• RL Imbalance -> Right rotate Right Child, then Left rotate Root.",
       "status": "PUBLISHED",
       "viewCount": 1850,
-      "createdAt": "2026-10-17T06:38:24.371Z",
-      "updatedAt": "2026-10-17T06:38:24.371Z"
+      "createdAt": "2026-10-17T08:27:37.785Z",
+      "updatedAt": "2026-10-17T08:27:37.785Z"
     },
     {
       "id": "atlas-deadlock",
       "title": "Deadlock & Banker's Algorithm",
       "slug": "deadlock",
       "subjectId": "sub-os",
+      "department": "CSE",
+      "classroomCode": "OS-DEAD-01",
       "unit": 3,
       "topic": "Deadlock Detection & Avoidance",
       "difficulty": "HARD",
@@ -721,14 +2021,16 @@
       "quickRevision": "• 4 Necessary Conditions: Mutual Exclusion, Hold and Wait, No Preemption, Circular Wait.\n• Prevention: Deny one of the 4 conditions.\n• Avoidance: Banker’s algorithm checks safe states before allocation.\n• Detection & Recovery: Let it happen, detect cycle, kill or preempt processes.",
       "status": "PUBLISHED",
       "viewCount": 1210,
-      "createdAt": "2026-10-17T06:38:24.371Z",
-      "updatedAt": "2026-10-17T06:38:24.371Z"
+      "createdAt": "2026-10-17T08:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
     },
     {
       "id": "atlas-paging",
       "title": "Virtual Memory & Page Replacement",
       "slug": "paging-replacement",
       "subjectId": "sub-os",
+      "department": "CSE",
+      "classroomCode": "OS-PAGE-01",
       "unit": 4,
       "topic": "Page Replacement Algorithms",
       "difficulty": "MEDIUM",
@@ -749,14 +2051,16 @@
       "quickRevision": "• FIFO: Evicts oldest loaded page; simple but subject to Belady’s anomaly.\n• LRU: Evicts page unused for longest time; optimal among practical online algorithms.\n• Optimal (MIN): Evicts page that will not be used for longest time in future; used as a theoretical benchmark.",
       "status": "PUBLISHED",
       "viewCount": 1105,
-      "createdAt": "2026-10-17T06:38:24.371Z",
-      "updatedAt": "2026-10-17T06:38:24.371Z"
+      "createdAt": "2026-10-17T08:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
     },
     {
       "id": "atlas-tcp",
       "title": "TCP 3-Way Handshake & Connection State",
       "slug": "tcp-handshake",
       "subjectId": "sub-cn",
+      "department": "CSE",
+      "classroomCode": "CN-TCP-01",
       "unit": 3,
       "topic": "Transport Layer Protocols",
       "difficulty": "EASY",
@@ -777,14 +2081,16 @@
       "quickRevision": "• Step 1: Client -> Server: SYN (seq=x)\n• Step 2: Server -> Client: SYN+ACK (seq=y, ack=x+1)\n• Step 3: Client -> Server: ACK (ack=y+1)\n• Teardown: 4-way FIN exchange; TIME_WAIT ensures delayed packets expire.",
       "status": "PUBLISHED",
       "viewCount": 1340,
-      "createdAt": "2026-10-17T06:38:24.371Z",
-      "updatedAt": "2026-10-17T06:38:24.371Z"
+      "createdAt": "2026-10-17T08:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
     },
     {
       "id": "atlas-compiler",
       "title": "Compiler Pipeline Architecture",
       "slug": "compiler-pipeline",
       "subjectId": "sub-cd",
+      "department": "CSE",
+      "classroomCode": "CD-PIPE-01",
       "unit": 1,
       "topic": "Phases of a Compiler",
       "difficulty": "HARD",
@@ -805,14 +2111,16 @@
       "quickRevision": "• Lexical: Char stream -> Tokens (handles comments, whitespace).\n• Syntax: Tokens -> Parse Tree (checks CFG grammar).\n• Semantic: Type checking, array bounds, symbol table.\n• IR: Machine-independent representation (TAC / Quadruples).\n• Optimization: Dead code removal, loop unrolling, constant folding.\n• Code Gen: Memory addresses, registers, assembly code.",
       "status": "PUBLISHED",
       "viewCount": 940,
-      "createdAt": "2026-10-17T06:38:24.371Z",
-      "updatedAt": "2026-10-17T06:38:24.371Z"
+      "createdAt": "2026-10-17T08:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
     },
     {
       "id": "atlas-normalization",
       "title": "DBMS Normalization & B+ Tree Indexing",
       "slug": "dbms-normalization",
       "subjectId": "sub-dbms",
+      "department": "CSE",
+      "classroomCode": "DB-NORM-01",
       "unit": 2,
       "topic": "Relational Schema Design & Indexing",
       "difficulty": "MEDIUM",
@@ -832,15 +2140,17 @@
       "commonMistakes": "1. Thinking 3NF and BCNF are identical (BCNF requires every determinant to be a superkey, with no exception for prime attributes).\n2. Assuming indexing every column is good practice (indexes add write overhead).",
       "quickRevision": "• 1NF: Atomic values, no repeating groups.\n• 2NF: In 1NF + No partial dependencies on candidate keys.\n• 3NF: In 2NF + No transitive dependencies.\n• BCNF: For every X -> Y, X must be a superkey.\n• B+ Tree: All keys duplicated in leaves; leaf nodes linked for range queries.",
       "status": "PUBLISHED",
-      "viewCount": 1280,
-      "createdAt": "2026-10-17T06:38:24.371Z",
-      "updatedAt": "2026-10-17T06:38:24.371Z"
+      "viewCount": 1284,
+      "createdAt": "2026-10-17T08:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
     },
     {
       "id": "atlas-sorting",
       "title": "Algorithm Visualizer: QuickSort & MergeSort",
       "slug": "sorting-algorithms",
       "subjectId": "sub-os",
+      "department": "CSE",
+      "classroomCode": "DS-SORT-01",
       "unit": 1,
       "topic": "Divide & Conquer Algorithms",
       "difficulty": "EASY",
@@ -861,8 +2171,120 @@
       "quickRevision": "• QuickSort: Average O(n log n), worst O(n^2), In-place O(log n) stack, Unstable.\n• MergeSort: Guaranteed O(n log n), Auxiliary O(n) space, Stable.\n• Best practical pivot: Randomized or Median-of-Three.",
       "status": "PUBLISHED",
       "viewCount": 1620,
-      "createdAt": "2026-10-17T06:38:24.371Z",
-      "updatedAt": "2026-10-17T06:38:24.371Z"
+      "createdAt": "2026-10-17T08:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
+    },
+    {
+      "id": "atlas-dsp-sampling",
+      "title": "Signal Sampling & Aliasing Visualizer",
+      "slug": "signal-sampling",
+      "subjectId": "sub-dsp",
+      "department": "ECE",
+      "classroomCode": "EC-SAMP-01",
+      "unit": 1,
+      "topic": "Nyquist-Shannon Sampling Theorem",
+      "difficulty": "MEDIUM",
+      "estimatedTime": "15 mins",
+      "learningObjectives": [
+        "Understand continuous to discrete signal transformation x(t) -> x[n]",
+        "Demonstrate the Nyquist criterion: Sampling rate fs >= 2 * fmax",
+        "Observe spectral folding and aliasing distortion when fs < 2 * fmax",
+        "Compare ideal sinc interpolation with real-time reconstruction"
+      ],
+      "visualizationType": "WAVEFORM_VISUALIZER",
+      "overview": "Sampling is the bridge connecting analog physical signals with discrete digital computing. The Nyquist-Shannon theorem dictates the minimum sampling rate required to avoid irreversible distortion.",
+      "whyItMatters": "Every digital audio workstation, digital oscilloscope, 5G wireless transceiver, and medical ECG sensor relies on sampling. Violating the Nyquist rate causes high frequencies to masquerade as lower frequencies.",
+      "concept": "A continuous bandlimited signal x(t) with maximum frequency fmax can be uniquely reconstructed from its samples x[n] = x(nTs) if the sampling frequency fs = 1/Ts >= 2 fmax. If fs < 2 fmax, overlapping frequency replicas produce aliasing.",
+      "howItWorks": "1. An analog signal x(t) enters the sampler.\n2. Impulses capture instantaneous amplitudes at intervals Ts = 1/fs.\n3. A low-pass reconstruction filter eliminates spectral copies.\n4. If fs is too low, the reconstructed wave has an apparent frequency |fs - fin| != fin.",
+      "example": "A pure 3 Hz sine wave sampled at 4 Hz (less than Nyquist rate 6 Hz) appears as a 1 Hz sine wave after reconstruction. A 400 Hz audio tone sampled at 600 Hz aliases to 200 Hz.",
+      "commonMistakes": "1. Believing that increasing amplitude prevents aliasing (aliasing is purely a frequency-domain phenomenon).\n2. Confusing sampling frequency (Hz) with quantization resolution (bits).\n3. Omitting an analog anti-aliasing low-pass filter prior to ADC conversion.",
+      "quickRevision": "• Nyquist Rate: fs >= 2 fmax.\n• Nyquist Frequency: fN = fs / 2.\n• Aliasing occurs when fin > fs / 2.\n• Apparent frequency: fapparent = |fs - fin|.\n• Solution: Analog low-pass pre-filtering before sampling.",
+      "status": "PUBLISHED",
+      "viewCount": 940,
+      "createdAt": "2026-10-17T08:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
+    },
+    {
+      "id": "atlas-ee-circuits",
+      "title": "AC Circuits & RLC Resonance",
+      "slug": "ac-circuits",
+      "subjectId": "sub-ee-circuits",
+      "department": "EEE",
+      "classroomCode": "EE-CIRC-01",
+      "unit": 2,
+      "topic": "Series & Parallel RLC Resonance",
+      "difficulty": "MEDIUM",
+      "estimatedTime": "20 mins",
+      "learningType": "INTERACTIVE",
+      "visualizationType": "CIRCUIT_VISUALIZER",
+      "configuration": {
+        "circuitType": "RLC_AC",
+        "defaultFrequency": 50,
+        "defaultResistance": 100,
+        "defaultInductance": 50,
+        "defaultCapacitance": 20
+      },
+      "academicMappings": [
+        {
+          "branchCode": "ECE",
+          "subjectId": "sub-dsp",
+          "unit": 1
+        },
+        {
+          "branchCode": "CSE",
+          "subjectId": "sub-os",
+          "unit": 1
+        }
+      ],
+      "learningObjectives": [
+        "Understand Alternating Current (AC) impedance: Z = sqrt(R^2 + (XL - XC)^2)",
+        "Compute inductive reactance XL = 2*pi*f*L and capacitive reactance XC = 1/(2*pi*f*C)",
+        "Demonstrate resonant frequency condition f0 = 1 / (2*pi*sqrt(LC))",
+        "Inspect dynamic voltage-current phase shifts (phi) on a live dual-trace oscilloscope"
+      ],
+      "overview": "Alternating Current (AC) drives modern electric grids and high-speed communication systems. In an RLC circuit, inductive and capacitive reactances vary with frequency, producing electrical resonance.",
+      "whyItMatters": "RLC resonance forms the core principle behind radio frequency transmitters, wireless charging coils, induction heating, and audio equalizer networks.",
+      "concept": "An alternating voltage v(t) = V0 sin(wt) produces current i(t) = I0 sin(wt - phi). At resonance, XL = XC, cancelling net reactance so impedance is purely resistive (Z = R) and current is maximized.",
+      "howItWorks": "1. Sinusoidal AC voltage source excites R, L, and C components in series.\n2. Reactances XL and XC are calculated at the supply frequency.\n3. Net reactance creates a phase shift phi between voltage and current.\n4. Dual-channel oscilloscope visualizes voltage vs current waveforms live.\n5. Phasor diagram vectors illustrate real vs reactive power components.",
+      "example": "With R = 100 Ohms, L = 50 mH, and C = 20 µF: Resonant frequency f0 = 1 / (2*pi*sqrt(0.05 * 20e-6)) = 159.2 Hz. At 50 Hz, the circuit is capacitive with current leading voltage.",
+      "commonMistakes": "1. Adding reactances algebraically (R + XL + XC) rather than vectorially in the complex impedance plane.\n2. Overlooking that voltage across the inductor or capacitor at resonance can exceed supply voltage by the Quality Factor Q.",
+      "quickRevision": "• XL = 2*pi*f*L (Inductive, lags).\n• XC = 1/(2*pi*f*C) (Capacitive, leads).\n• Resonance: XL = XC -> f0 = 1 / (2*pi*sqrt(LC)).\n• At resonance: Z = R, Current is maximized, Power Factor = 1.0 (Unity).",
+      "status": "PUBLISHED",
+      "viewCount": 1120,
+      "createdAt": "2026-10-17T08:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
+    },
+    {
+      "id": "atlas-ce-mechanics",
+      "title": "Stress, Strain & Hooke's Law",
+      "slug": "stress-strain-mechanics",
+      "subjectId": "sub-ce-mechanics",
+      "department": "CIVIL",
+      "classroomCode": "CE-MECH-01",
+      "unit": 1,
+      "topic": "Stress-Strain Relations & Elastic Constants",
+      "difficulty": "EASY",
+      "estimatedTime": "15 mins",
+      "learningType": "STANDARD_CONTENT",
+      "visualizationType": null,
+      "content": "Normal stress is defined as internal resistance per unit area: σ = P / A (expressed in N/m² or Pascals). Strain is deformation per unit initial length: ε = ΔL / L (dimensionless ratio). Under the proportional limit, Hooke’s Law establishes linear elasticity: σ = E · ε, where E is Young’s Modulus of Elasticity. Shear stress τ = V / A produces angular deformation γ = τ / G, where G is Shear Modulus. Poisson’s ratio ν = -ε_lateral / ε_axial describes transverse contraction under tensile load. The fundamental elastic constant relationship is: E = 2G(1 + ν) = 3K(1 - 2ν), where K is Bulk Modulus.",
+      "learningObjectives": [
+        "Define normal stress (σ = P/A) and axial strain (ε = ΔL/L)",
+        "State and apply Hooke’s Law for linear elastic axial members",
+        "Understand elastic constants: Young’s Modulus E, Shear Modulus G, Bulk Modulus K",
+        "Calculate elongation ΔL = (P*L) / (A*E) under structural tensile loads"
+      ],
+      "overview": "A fundamental civil and mechanical engineering concept establishing the quantitative relationship between applied structural mechanical loads, internal resistance stresses, and dimensional deformations.",
+      "whyItMatters": "Every building foundation, steel truss, suspension bridge, and pressure vessel design begins with stress-strain verification to prevent catastrophic structural yielding and fracture.",
+      "concept": "When an external axial load is applied to a member, internal resisting forces develop across cross-sections. Within the elastic limit, deformation is proportional to stress. The slope of the linear region in a tensile stress-strain test is Young’s Modulus E.",
+      "howItWorks": "1. Apply axial tensile force P to structural bar of initial length L and cross-section A.\n2. Calculate normal stress σ = P / A.\n3. Measure extension ΔL and calculate strain ε = ΔL / L.\n4. Apply Hooke’s Law: ΔL = (P · L) / (A · E).\n5. Verify that maximum working stress does not exceed yield strength divided by safety factor (σ_work <= σ_y / FOS).",
+      "example": "A steel rod of length 2m and diameter 20mm (Area = 314.16 mm²) carries a tensile load of 40 kN. With E = 200 GPa: Stress σ = 40000 / (314.16e-6) = 127.3 MPa. Strain ε = 127.3e6 / 200e9 = 0.000637. Elongation ΔL = 0.000637 * 2m = 1.27 mm.",
+      "commonMistakes": "1. Using diameter instead of cross-sectional area (pi * d^2 / 4).\n2. Confusing Engineering Stress (nominal initial area) with True Stress (instantaneous deformed area).\n3. Neglecting units: converting GPa to MPa (1 GPa = 1000 MPa = 10^9 N/m²).",
+      "quickRevision": "• Normal Stress: σ = P / A (Pascals or MPa).\n• Axial Strain: ε = ΔL / L.\n• Hooke’s Law: σ = E · ε -> ΔL = PL / (AE).\n• Shear Stress: τ = G · γ.\n• Elastic Relations: E = 2G(1 + ν) = 3K(1 - 2ν).",
+      "status": "PUBLISHED",
+      "viewCount": 782,
+      "createdAt": "2026-10-17T08:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
     }
   ],
   "announcements": [
@@ -872,12 +2294,12 @@
       "subjectId": "sub-os",
       "sectionId": "sec-csea",
       "authorId": "user-kumar",
-      "title": "Operating Systems Mid-Term Syllabus & Problem Set",
+      "title": "Operating Systems Mid-Term Syllabus & Problem Set (CSE-A)",
       "content": "Mid-term 1 examinations will cover Unit 1 (Introduction & Processes) and Unit 2 (CPU Scheduling & Deadlocks). Please review the newly uploaded notes and solve the practice questions on the Atlas.",
       "priority": "HIGH",
       "status": "PUBLISHED",
-      "createdAt": "2026-10-17T02:38:24.371Z",
-      "updatedAt": "2026-10-17T06:38:24.371Z"
+      "createdAt": "2026-10-17T04:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
     },
     {
       "id": "ann-2",
@@ -885,12 +2307,12 @@
       "subjectId": "sub-dbms",
       "sectionId": "sec-csea",
       "authorId": "user-sunitha",
-      "title": "DBMS Assignment 3 Submission Deadline Extended",
+      "title": "DBMS Assignment 3 Submission Deadline Extended (CSE-A)",
       "content": "The submission deadline for Normalization & BCNF Decomposition has been extended to Monday 5:00 PM. Make sure to include dependency preservation proofs.",
       "priority": "NORMAL",
       "status": "PUBLISHED",
-      "createdAt": "2026-10-16T10:38:24.371Z",
-      "updatedAt": "2026-10-17T06:38:24.371Z"
+      "createdAt": "2026-10-16T12:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
     },
     {
       "id": "ann-3",
@@ -900,8 +2322,48 @@
       "content": "The final examination schedule for B.Tech VII Semester (2026 Batch) has been published by the academic dean office. Previous years question papers and model papers are accessible through the Engineering Atlas portal.",
       "priority": "HIGH",
       "status": "PUBLISHED",
-      "createdAt": "2026-10-15T06:38:24.371Z",
-      "updatedAt": "2026-10-17T06:38:24.371Z"
+      "createdAt": "2026-10-15T08:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
+    },
+    {
+      "id": "ann-4",
+      "institutionId": "inst-svec-01",
+      "subjectId": "sub-dsp",
+      "sectionId": "sec-ecea",
+      "authorId": "user-anitha",
+      "title": "ECE-A: DSP Lab & Interactive Waveform Visualizer Practice",
+      "content": "All ECE-A students are requested to complete the interactive Signal Sampling and Aliasing simulation on the Engineering Atlas before attending Wednesday DSP laboratory session.",
+      "priority": "HIGH",
+      "status": "PUBLISHED",
+      "createdAt": "2026-10-17T00:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
+    },
+    {
+      "id": "ann-5",
+      "institutionId": "inst-svec-01",
+      "subjectId": "sub-os",
+      "sectionId": "sec-cseb",
+      "authorId": "user-rajesh",
+      "title": "CSE-B: Operating Systems Gantt Chart Assignment Submission",
+      "content": "Please submit Assignment 03 covering SJF and Round Robin Gantt charts directly during tutorial hour on Thursday. Model solutions for Banker algorithm will be discussed in Friday class.",
+      "priority": "NORMAL",
+      "status": "PUBLISHED",
+      "createdAt": "2026-10-16T18:27:37.786Z",
+      "updatedAt": "2026-10-17T08:27:37.786Z"
+    },
+    {
+      "id": "ann-draft-kumar-01",
+      "title": "Upcoming Lab Assessment on SQL Joins & Subqueries",
+      "content": "Draft guidelines for the mid-semester lab test scheduled next week.",
+      "authorId": "user-kumar",
+      "authorName": "Dr. P. Kumar",
+      "targetRole": "STUDENT",
+      "subjectId": "sub-dbms",
+      "sectionId": "sec-csea",
+      "status": "DRAFT",
+      "priority": "MEDIUM",
+      "createdAt": "2026-10-22T05:10:15.591Z",
+      "updatedAt": "2026-10-22T05:10:15.591Z"
     }
   ],
   "analyticsEvents": [
@@ -909,20 +2371,146 @@
       "id": "ev-1",
       "type": "ATLAS_VIEW",
       "targetId": "cpu-scheduling",
-      "createdAt": "2026-10-17T05:38:24.372Z"
+      "createdAt": "2026-10-17T07:27:37.787Z"
     },
     {
       "id": "ev-2",
       "type": "MATERIAL_DOWNLOAD",
       "targetId": "mat-1",
-      "createdAt": "2026-10-17T04:38:24.372Z"
+      "createdAt": "2026-10-17T06:27:37.787Z"
     },
     {
       "id": "ev-3",
       "type": "PRACTICE_SUBMIT",
       "targetId": "sub-os",
       "metadata": "{\"score\":80}",
-      "createdAt": "2026-10-17T06:38:24.372Z"
+      "createdAt": "2026-10-17T08:27:37.787Z"
+    },
+    {
+      "id": "ev-1792562387943",
+      "type": "ATLAS_VIEW",
+      "targetId": "stress-strain-mechanics",
+      "createdAt": "2026-10-21T05:59:47.943Z"
+    },
+    {
+      "id": "ev-1792562388033",
+      "type": "ATLAS_VIEW",
+      "targetId": "stress-strain-mechanics",
+      "createdAt": "2026-10-21T05:59:48.033Z"
+    },
+    {
+      "id": "ev-1792562419509",
+      "type": "ATLAS_VIEW",
+      "targetId": "dbms-normalization",
+      "createdAt": "2026-10-21T06:00:19.509Z"
+    },
+    {
+      "id": "ev-1792562419675",
+      "type": "ATLAS_VIEW",
+      "targetId": "dbms-normalization",
+      "createdAt": "2026-10-21T06:00:19.675Z"
+    },
+    {
+      "id": "ev-1792564540416",
+      "type": "ATLAS_VIEW",
+      "targetId": "dbms-normalization",
+      "createdAt": "2026-10-21T06:35:40.416Z"
+    },
+    {
+      "id": "ev-1792564541773",
+      "type": "ATLAS_VIEW",
+      "targetId": "dbms-normalization",
+      "createdAt": "2026-10-21T06:35:41.773Z"
+    },
+    {
+      "id": "ev-1792642412049",
+      "type": "ATLAS_VIEW",
+      "targetId": "cpu-scheduling",
+      "createdAt": "2026-10-22T04:13:32.049Z"
+    },
+    {
+      "id": "ev-1792642413128",
+      "type": "ATLAS_VIEW",
+      "targetId": "cpu-scheduling",
+      "createdAt": "2026-10-22T04:13:33.128Z"
+    },
+    {
+      "id": "ev-1792642457204",
+      "type": "ATLAS_VIEW",
+      "targetId": "cpu-scheduling",
+      "createdAt": "2026-10-22T04:14:17.204Z"
+    },
+    {
+      "id": "ev-1792642457838",
+      "type": "ATLAS_VIEW",
+      "targetId": "cpu-scheduling",
+      "createdAt": "2026-10-22T04:14:17.838Z"
+    },
+    {
+      "id": "ev-1792642472279",
+      "type": "ATLAS_VIEW",
+      "targetId": "cpu-scheduling",
+      "createdAt": "2026-10-22T04:14:32.279Z"
+    },
+    {
+      "id": "ev-1792642472634",
+      "type": "ATLAS_VIEW",
+      "targetId": "cpu-scheduling",
+      "createdAt": "2026-10-22T04:14:32.634Z"
+    },
+    {
+      "id": "ev-1792642877988",
+      "type": "ATLAS_VIEW",
+      "targetId": "cpu-scheduling",
+      "createdAt": "2026-10-22T04:21:17.988Z"
+    },
+    {
+      "id": "ev-1792644258286",
+      "type": "ATLAS_VIEW",
+      "targetId": "cpu-scheduling",
+      "createdAt": "2026-10-22T04:44:18.286Z"
+    },
+    {
+      "id": "ev-1792644259433",
+      "type": "ATLAS_VIEW",
+      "targetId": "cpu-scheduling",
+      "createdAt": "2026-10-22T04:44:19.433Z"
+    },
+    {
+      "id": "ev-1792644339000",
+      "type": "ATLAS_VIEW",
+      "targetId": "cpu-scheduling",
+      "createdAt": "2026-10-22T04:45:39.000Z"
+    },
+    {
+      "id": "ev-1792644339292",
+      "type": "ATLAS_VIEW",
+      "targetId": "cpu-scheduling",
+      "createdAt": "2026-10-22T04:45:39.292Z"
+    },
+    {
+      "id": "ev-1792645168856",
+      "type": "ATLAS_VIEW",
+      "targetId": "cpu-scheduling",
+      "createdAt": "2026-10-22T04:59:28.857Z"
+    },
+    {
+      "id": "ev-1792645169735",
+      "type": "ATLAS_VIEW",
+      "targetId": "cpu-scheduling",
+      "createdAt": "2026-10-22T04:59:29.736Z"
+    },
+    {
+      "id": "ev-1792645286948",
+      "type": "ATLAS_VIEW",
+      "targetId": "cpu-scheduling",
+      "createdAt": "2026-10-22T05:01:26.948Z"
+    },
+    {
+      "id": "ev-1792645288987",
+      "type": "ATLAS_VIEW",
+      "targetId": "cpu-scheduling",
+      "createdAt": "2026-10-22T05:01:28.987Z"
     }
   ]
 }

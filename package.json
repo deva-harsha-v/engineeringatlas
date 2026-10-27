@@ -9,7 +9,7 @@
     "start": "next start -p 3000",
     "lint": "next lint",
     "prisma:generate": "prisma generate",
-    "seed": "node scripts/seed.js",
+    "seed": "tsx scripts/seed.ts",
     "test:verify": "node scripts/verify-e2e.js"
   },
   "dependencies": {

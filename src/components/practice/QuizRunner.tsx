@@ -199,7 +199,7 @@ export function QuizRunner({ subjectName, topicTitle, questions, onFinish }: Qui
         background: 'var(--surface-1)',
         border: '1px solid var(--border)',
         borderRadius: 'var(--radius-lg)',
-        padding: '28px',
+        padding: 'clamp(16px, 3.5vw, 28px)',
       }}
     >
       {/* Top Header */}

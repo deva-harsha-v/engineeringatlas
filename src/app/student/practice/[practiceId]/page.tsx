@@ -3,11 +3,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
-import { StudentNav } from '@/components/layout/StudentNav';
-import { StudentBottomNav } from '@/components/layout/StudentBottomNav';
 import { QuizRunner } from '@/components/practice/QuizRunner';
 import { Question, Subject } from '@/lib/types';
-import { EmptyState } from '@/components/ui';
+import { EmptyState, RippleLoader } from '@/components/ui';
 
 export default function ActivePracticeRunnerPage() {
   const params = useParams();
@@ -37,38 +35,42 @@ export default function ActivePracticeRunnerPage() {
   }, [practiceId]);
 
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }} className="mobile-nav-pad">
-      <StudentNav />
+    <main
+      className="mobile-nav-pad"
+      style={{
+        flex: 1,
+        padding: '24px clamp(16px, 2.5vw, 32px) 80px',
+        maxWidth: '1440px',
+        width: '100%',
+        boxSizing: 'border-box',
+        margin: '0 auto',
+      }}
+    >
+      <div style={{ marginBottom: '24px' }}>
+        <Link
+          href="/student/practice"
+          style={{ fontSize: '13px', color: 'var(--text-muted)', display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '8px' }}
+        >
+          ← Back to Practice Hub
+        </Link>
+        <h1 className="text-page-title">{subject?.name || 'Practice'} Assessment</h1>
+      </div>
 
-      <main className="ea-container" style={{ flex: 1, padding: '32px 16px 64px' }}>
-        <div style={{ marginBottom: '24px' }}>
-          <Link
-            href="/student/practice"
-            style={{ fontSize: '13px', color: 'var(--text-muted)', display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '8px' }}
-          >
-            ← Back to Practice Hub
-          </Link>
-          <h1 className="text-page-title">{subject?.name || 'Practice'} Assessment</h1>
+      {loading ? (
+        <div style={{ padding: '64px 16px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <RippleLoader size="md" message="Loading Practice Assessment..." subMessage="Preparing Concept Questions" />
         </div>
-
-        {loading ? (
-          <div style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'center' }}>
-            <div className="skeleton" style={{ height: '240px', borderRadius: 'var(--radius-lg)' }} />
-          </div>
-        ) : questions.length === 0 ? (
-          <EmptyState
-            title="No Questions Available"
-            description="There are currently no practice questions available for this module."
-          />
-        ) : (
-          <QuizRunner
-            subjectName={subject?.name || 'Subject'}
-            questions={questions}
-          />
-        )}
-      </main>
-
-      <StudentBottomNav />
-    </div>
+      ) : questions.length === 0 ? (
+        <EmptyState
+          title="No Questions Available"
+          description="There are currently no practice questions available for this module."
+        />
+      ) : (
+        <QuizRunner
+          subjectName={subject?.name || 'Subject'}
+          questions={questions}
+        />
+      )}
+    </main>
   );
 }

@@ -1,0 +1,555 @@
+/* ==========================================================================
+   Engineering Atlas — Mercury Liquid / Neural Access Faculty Login Styles
+   Handwritten CSS, Theme-Reactive, SVG Gooey Physics, Mouse Parallax
+   ========================================================================== */
+
+:root,
+[data-theme="dark"] {
+  --mercury-bg: #06080F;
+  --mercury-blob-start: #e0e6ed;
+  --mercury-blob-mid: #6366f1;
+  --mercury-blob-end: #38bdf8;
+  --mercury-accent: #ffffff;
+  --mercury-text-dim: rgba(255, 255, 255, 0.55);
+  --mercury-text-muted: rgba(255, 255, 255, 0.35);
+  --mercury-line: rgba(255, 255, 255, 0.15);
+  --mercury-glow: #818cf8;
+  --mercury-btn-bg: #ffffff;
+  --mercury-btn-text: #06080F;
+  --mercury-btn-drop: #818cf8;
+  --filter-goo: url('#gooey');
+  --mercury-grid: rgba(255, 255, 255, 0.02);
+}
+
+[data-theme="light"] {
+  --mercury-bg: #F8FAFC;
+  --mercury-blob-start: #4f46e5;
+  --mercury-blob-mid: #6366f1;
+  --mercury-blob-end: #0284c7;
+  --mercury-accent: #0F172A;
+  --mercury-text-dim: #475569;
+  --mercury-text-muted: #94A3B8;
+  --mercury-line: rgba(15, 23, 42, 0.18);
+  --mercury-glow: #4f46e5;
+  --mercury-btn-bg: #0F172A;
+  --mercury-btn-text: #FFFFFF;
+  --mercury-btn-drop: #6366f1;
+  --filter-goo: url('#gooey');
+  --mercury-grid: rgba(15, 23, 42, 0.03);
+}
+
+/* Base Wrapper */
+.mercury-wrapper {
+  background-color: var(--mercury-bg);
+  color: var(--mercury-accent);
+  font-family: var(--font-sans), 'Inter', -apple-system, sans-serif;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.mercury-wrapper * {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle Technical Coordinate Grid */
+.mercury-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, var(--mercury-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--mercury-grid) 1px, transparent 1px);
+  background-size: 54px 54px;
+  background-position: 0 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Background Liquid Physics Simulation */
+.mercury-stage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  filter: var(--filter-goo);
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+[data-theme="light"] .mercury-stage {
+  opacity: 0.35;
+}
+
+.mercury-blob {
+  position: absolute;
+  background: linear-gradient(135deg, var(--mercury-blob-start), var(--mercury-blob-mid), var(--mercury-blob-end));
+  border-radius: 50%;
+  filter: blur(24px);
+  animation: mercury-float 20s infinite alternate ease-in-out;
+  box-shadow: inset -10px -10px 24px rgba(0, 0, 0, 0.45),
+              10px 10px 30px rgba(255, 255, 255, 0.2);
+  transition: margin 0.12s ease-out; /* Smooths the mousemove parallax */
+  will-change: transform, margin;
+}
+
+[data-theme="light"] .mercury-blob {
+  box-shadow: inset -6px -6px 16px rgba(0, 0, 0, 0.2),
+              6px 6px 20px rgba(99, 102, 241, 0.25);
+}
+
+@keyframes mercury-float {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(8vw, 15vh) scale(1.18); }
+  66% { transform: translate(-6vw, 8vh) scale(0.85); }
+  100% { transform: translate(5vw, -8vh) scale(1.08); }
+}
+
+/* Top Navigation Bar */
+.mercury-top-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 24px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 20;
+}
+
+.mercury-top-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+}
+
+.mercury-brand-divider {
+  width: 1px;
+  height: 22px;
+  background-color: var(--mercury-line);
+}
+
+.mercury-institution-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.mercury-institution-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--mercury-accent);
+}
+
+.mercury-institution-sub {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--mercury-text-dim);
+  text-transform: uppercase;
+}
+
+/* Interface Container */
+.mercury-auth-container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 480px;
+  padding: 40px 32px;
+}
+
+/* Header */
+.mercury-header {
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.mercury-brand-id {
+  font-family: var(--font-mono), 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--mercury-text-dim);
+  margin-bottom: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mercury-brand-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #6366F1;
+  box-shadow: 0 0 8px #6366F1;
+  display: inline-block;
+}
+
+.mercury-header h1 {
+  font-weight: 800;
+  font-size: clamp(2.6rem, 5.5vw, 3.4rem);
+  line-height: 0.95;
+  letter-spacing: -2px;
+  margin-left: -2px;
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: var(--mercury-accent);
+  text-transform: uppercase;
+}
+
+.mercury-header-sub {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--mercury-text-dim);
+  margin: 0;
+  max-width: 400px;
+}
+
+/* Form Elements */
+.mercury-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.mercury-form-group {
+  position: relative;
+  margin-bottom: 26px;
+  transition: transform 0.35s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.mercury-form-group:focus-within {
+  transform: translateX(8px);
+}
+
+.mercury-form-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.mercury-form-group label {
+  display: block;
+  font-family: var(--font-mono), 'Space Mono', monospace;
+  font-size: 11px;
+  color: var(--mercury-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.mercury-input-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.mercury-form-group input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--mercury-line);
+  color: var(--mercury-accent);
+  padding: 12px 32px 12px 0;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.35s;
+  font-family: inherit;
+}
+
+.mercury-form-group input::placeholder {
+  color: var(--mercury-text-muted);
+  font-size: 14px;
+}
+
+.mercury-input-glow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--mercury-glow);
+  transition: width 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+  box-shadow: 0 0 16px var(--mercury-glow);
+  pointer-events: none;
+}
+
+.mercury-form-group:focus-within .mercury-input-glow {
+  width: 100%;
+}
+
+/* Password Eye Toggle */
+.mercury-eye-btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--mercury-text-dim);
+  padding: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s ease;
+}
+
+.mercury-eye-btn:hover {
+  color: var(--mercury-accent);
+}
+
+/* Error Banner */
+.mercury-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  background-color: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #f87171;
+  font-size: 12px;
+  font-family: var(--font-mono), monospace;
+}
+
+[data-theme="light"] .mercury-error {
+  background-color: #FEF2F2;
+  border-color: #FECACA;
+  color: #DC2626;
+}
+
+/* The Mercury Gooey Submit Button */
+.mercury-submit-wrap {
+  margin-top: 24px;
+  position: relative;
+  filter: var(--filter-goo);
+}
+
+.mercury-btn-base {
+  background: var(--mercury-btn-bg);
+  color: var(--mercury-btn-text);
+  border: none;
+  padding: 16px 32px;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  border-radius: 9999px;
+  transition: letter-spacing 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.15s ease, background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.mercury-btn-base:hover:not(:disabled) {
+  letter-spacing: 3.5px;
+}
+
+.mercury-btn-base:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.mercury-btn-base:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.mercury-drop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: var(--mercury-btn-drop);
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  border-radius: 50px;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.mercury-submit-wrap:hover .mercury-drop {
+  transform: translate(-50%, -50%) scale(1.05, 1.25);
+  filter: brightness(1.25);
+}
+
+/* Quick Demo Switcher */
+.mercury-quick-demo {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--mercury-line);
+}
+
+[data-theme="light"] .mercury-quick-demo {
+  background: rgba(15, 23, 42, 0.03);
+}
+
+.mercury-quick-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mercury-quick-title {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--mercury-text-dim);
+}
+
+.mercury-quick-email {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  color: var(--mercury-accent);
+}
+
+.mercury-quick-btn {
+  background: transparent;
+  border: 1px solid var(--mercury-line);
+  color: var(--mercury-accent);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-family: var(--font-mono), monospace;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mercury-quick-btn:hover {
+  background: #6366F1;
+  color: #FFFFFF;
+  border-color: #6366F1;
+}
+
+/* Utility Footer Navigation */
+.mercury-footer-nav {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono), 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.mercury-footer-nav a,
+.mercury-footer-nav button {
+  color: var(--mercury-text-dim);
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px 0;
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  transition: color 0.25s ease;
+}
+
+.mercury-footer-nav a:hover,
+.mercury-footer-nav button:hover {
+  color: var(--mercury-accent);
+}
+
+/* Fixed Bottom-Right Admin Button */
+.mercury-fixed-admin {
+  position: fixed;
+  bottom: 20px;
+  right: 24px;
+  z-index: 50;
+}
+
+.mercury-admin-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--mercury-line);
+  color: var(--mercury-text-dim);
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+}
+
+.mercury-admin-badge:hover {
+  background: #6366F1;
+  color: #FFFFFF;
+  border-color: #6366F1;
+}
+
+/* Hidden SVG Filter */
+.svg-filter-hidden {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Responsive & Accessibility
+   ========================================================================== */
+
+@media (max-width: 640px) {
+  .mercury-top-bar {
+    padding: 16px 20px;
+  }
+
+  .mercury-brand-divider,
+  .mercury-institution-text {
+    display: none;
+  }
+
+  .mercury-auth-container {
+    padding: 32px 20px;
+  }
+
+  .mercury-header h1 {
+    font-size: 2.4rem;
+  }
+
+  .mercury-blob {
+    filter: blur(18px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mercury-blob {
+    animation: none !important;
+    transition: none !important;
+  }
+  .mercury-form-group {
+    transition: none !important;
+  }
+  .mercury-form-group:focus-within {
+    transform: none !important;
+  }
+  .mercury-btn-base {
+    transition: none !important;
+  }
+}
